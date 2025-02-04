@@ -1,0 +1,1967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Mkdox curlpipebash by pforret">
+      
+      
+      
+        <link rel="canonical" href="https://curlpipebash.com/examples/get.docker.com.ff/">
+      
+      
+        <link rel="prev" href="../frankenphp.dev.5a/">
+      
+      
+        <link rel="next" href="../install.sandstorm.io.69/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../icon/android-chrome-192x192.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>get.docker.com - curl | bash</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- your analytics script -->
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getdockercom" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="curl | bash" class="md-header__button md-logo" aria-label="curl | bash" data-md-component="logo">
+      
+  <img src="../../icon/android-chrome-192x192.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            curl | bash
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              get.docker.com
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  curl | bash
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/" class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../frankenphp.dev.5a/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="curl | bash" class="md-nav__button md-logo" aria-label="curl | bash" data-md-component="logo">
+      
+  <img src="../../icon/android-chrome-192x192.png" alt="logo">
+
+    </a>
+    curl | bash
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    curl | bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About this site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/features/extensions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown Extensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/features/plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/content/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Content
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/fake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frankenphp.dev.5a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    frankenphp.dev/install.sh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    get.docker.com
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    get.docker.com
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install.sandstorm.io.69/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    install.sandstorm.io
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../laravel.build.ce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    laravel.build/example-app
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../php.new.d9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    php.new/install/mac/8.4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raw.githubusercontent.com.0c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    /basherpm/basher/master/install.sh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raw.githubusercontent.com.a3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    /Homebrew/install/HEAD/install.sh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raw.githubusercontent.com.fb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    /nvm-sh/nvm/v0.40.1/install.sh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk.cloud.google.com.5a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sdk.cloud.google.com
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="getdockercom">get.docker.com<a class="headerlink" href="#getdockercom" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<ul>
+<li>run <code>curl -s https://get.docker.com | bash</code> to install Docker</li>
+<li>cf <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a> </li>
+</ul>
+<h2 id="stats">Stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Bourne Shell                     1             53            134            566
+-------------------------------------------------------------------------------
+</code></pre></div>
+<h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="nb">set</span><span class="w"> </span>-e
+<span class="c1"># Docker Engine for Linux installation script.</span>
+<span class="c1">#</span>
+<span class="c1"># This script is intended as a convenient way to configure docker&#39;s package</span>
+<span class="c1"># repositories and to install Docker Engine, This script is not recommended</span>
+<span class="c1"># for production environments. Before running this script, make yourself familiar</span>
+<span class="c1"># with potential risks and limitations, and refer to the installation manual</span>
+<span class="c1"># at https://docs.docker.com/engine/install/ for alternative installation methods.</span>
+<span class="c1">#</span>
+<span class="c1"># The script:</span>
+<span class="c1">#</span>
+<span class="c1"># - Requires `root` or `sudo` privileges to run.</span>
+<span class="c1"># - Attempts to detect your Linux distribution and version and configure your</span>
+<span class="c1">#   package management system for you.</span>
+<span class="c1"># - Doesn&#39;t allow you to customize most installation parameters.</span>
+<span class="c1"># - Installs dependencies and recommendations without asking for confirmation.</span>
+<span class="c1"># - Installs the latest stable release (by default) of Docker CLI, Docker Engine,</span>
+<span class="c1">#   Docker Buildx, Docker Compose, containerd, and runc. When using this script</span>
+<span class="c1">#   to provision a machine, this may result in unexpected major version upgrades</span>
+<span class="c1">#   of these packages. Always test upgrades in a test environment before</span>
+<span class="c1">#   deploying to your production systems.</span>
+<span class="c1"># - Isn&#39;t designed to upgrade an existing Docker installation. When using the</span>
+<span class="c1">#   script to update an existing installation, dependencies may not be updated</span>
+<span class="c1">#   to the expected version, resulting in outdated versions.</span>
+<span class="c1">#</span>
+<span class="c1"># Source code is available at https://github.com/docker/docker-install/</span>
+<span class="c1">#</span>
+<span class="c1"># Usage</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># To install the latest stable versions of Docker CLI, Docker Engine, and their</span>
+<span class="c1"># dependencies:</span>
+<span class="c1">#</span>
+<span class="c1"># 1. download the script</span>
+<span class="c1">#</span>
+<span class="c1">#   $ curl -fsSL https://get.docker.com -o install-docker.sh</span>
+<span class="c1">#</span>
+<span class="c1"># 2. verify the script&#39;s content</span>
+<span class="c1">#</span>
+<span class="c1">#   $ cat install-docker.sh</span>
+<span class="c1">#</span>
+<span class="c1"># 3. run the script with --dry-run to verify the steps it executes</span>
+<span class="c1">#</span>
+<span class="c1">#   $ sh install-docker.sh --dry-run</span>
+<span class="c1">#</span>
+<span class="c1"># 4. run the script either as root, or using sudo to perform the installation.</span>
+<span class="c1">#</span>
+<span class="c1">#   $ sudo sh install-docker.sh</span>
+<span class="c1">#</span>
+<span class="c1"># Command-line options</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1"># --version &lt;VERSION&gt;</span>
+<span class="c1"># Use the --version option to install a specific version, for example:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ sudo sh install-docker.sh --version 23.0</span>
+<span class="c1">#</span>
+<span class="c1"># --channel &lt;stable|test&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># Use the --channel option to install from an alternative installation channel.</span>
+<span class="c1"># The following example installs the latest versions from the &quot;test&quot; channel,</span>
+<span class="c1"># which includes pre-releases (alpha, beta, rc):</span>
+<span class="c1">#</span>
+<span class="c1">#   $ sudo sh install-docker.sh --channel test</span>
+<span class="c1">#</span>
+<span class="c1"># Alternatively, use the script at https://test.docker.com, which uses the test</span>
+<span class="c1"># channel as default.</span>
+<span class="c1">#</span>
+<span class="c1"># --mirror &lt;Aliyun|AzureChinaCloud&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># Use the --mirror option to install from a mirror supported by this script.</span>
+<span class="c1"># Available mirrors are &quot;Aliyun&quot; (https://mirrors.aliyun.com/docker-ce), and</span>
+<span class="c1"># &quot;AzureChinaCloud&quot; (https://mirror.azure.cn/docker-ce), for example:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ sudo sh install-docker.sh --mirror AzureChinaCloud</span>
+<span class="c1">#</span>
+<span class="c1"># ==============================================================================</span>
+
+
+<span class="c1"># Git commit from https://github.com/docker/docker-install when</span>
+<span class="c1"># the script was uploaded (Should only be modified by upload job):</span>
+<span class="nv">SCRIPT_COMMIT_SHA</span><span class="o">=</span><span class="s2">&quot;4c94a56999e10efcf48c5b8e3f6afea464f9108e&quot;</span>
+
+<span class="c1"># strip &quot;v&quot; prefix if present</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">VERSION</span><span class="p">#v</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># The channel to install from:</span>
+<span class="c1">#   * stable</span>
+<span class="c1">#   * test</span>
+<span class="nv">DEFAULT_CHANNEL_VALUE</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHANNEL</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">CHANNEL</span><span class="o">=</span><span class="nv">$DEFAULT_CHANNEL_VALUE</span>
+<span class="k">fi</span>
+
+<span class="nv">DEFAULT_DOWNLOAD_URL</span><span class="o">=</span><span class="s2">&quot;https://download.docker.com&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">DOWNLOAD_URL</span><span class="o">=</span><span class="nv">$DEFAULT_DOWNLOAD_URL</span>
+<span class="k">fi</span>
+
+<span class="nv">DEFAULT_REPO_FILE</span><span class="o">=</span><span class="s2">&quot;docker-ce.repo&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$REPO_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">REPO_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$DEFAULT_REPO_FILE</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="nv">mirror</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">DRY_RUN</span><span class="o">=</span><span class="si">${</span><span class="nv">DRY_RUN</span><span class="k">:-</span><span class="si">}</span>
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span>--channel<span class="o">)</span>
+<span class="w">            </span><span class="nv">CHANNEL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nb">shift</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>--dry-run<span class="o">)</span>
+<span class="w">            </span><span class="nv">DRY_RUN</span><span class="o">=</span><span class="m">1</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>--mirror<span class="o">)</span>
+<span class="w">            </span><span class="nv">mirror</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nb">shift</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>--version<span class="o">)</span>
+<span class="w">            </span><span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">2</span><span class="p">#v</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nb">shift</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>--*<span class="o">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Illegal option </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="nb">shift</span><span class="w"> </span><span class="k">$((</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>?<span class="w"> </span><span class="m">1</span><span class="w"> </span>:<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="k">))</span>
+<span class="k">done</span>
+
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mirror</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>Aliyun<span class="o">)</span>
+<span class="w">        </span><span class="nv">DOWNLOAD_URL</span><span class="o">=</span><span class="s2">&quot;https://mirrors.aliyun.com/docker-ce&quot;</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span>AzureChinaCloud<span class="o">)</span>
+<span class="w">        </span><span class="nv">DOWNLOAD_URL</span><span class="o">=</span><span class="s2">&quot;https://mirror.azure.cn/docker-ce&quot;</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="s2">&quot;&quot;</span><span class="o">)</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">        </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;unknown mirror &#39;</span><span class="nv">$mirror</span><span class="s2">&#39;: use either &#39;Aliyun&#39;, or &#39;AzureChinaCloud&#39;.&quot;</span>
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHANNEL</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>stable<span class="p">|</span><span class="nb">test</span><span class="o">)</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">        </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;unknown CHANNEL &#39;</span><span class="nv">$CHANNEL</span><span class="s2">&#39;: use either stable or test.&quot;</span>
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="k">esac</span>
+
+command_exists<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="o">}</span>
+
+<span class="c1"># version_gte checks if the version specified in $VERSION is at least the given</span>
+<span class="c1"># SemVer (Maj.Minor[.Patch]), or CalVer (YY.MM) version.It returns 0 (success)</span>
+<span class="c1"># if $VERSION is either unset (=latest) or newer or equal than the specified</span>
+<span class="c1"># version, or returns 1 (fail) otherwise.</span>
+<span class="c1">#</span>
+<span class="c1"># examples:</span>
+<span class="c1">#</span>
+<span class="c1"># VERSION=23.0</span>
+<span class="c1"># version_gte 23.0  // 0 (success)</span>
+<span class="c1"># version_gte 20.10 // 0 (success)</span>
+<span class="c1"># version_gte 19.03 // 0 (success)</span>
+<span class="c1"># version_gte 26.1  // 1 (fail)</span>
+version_gte<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span>version_compare<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># version_compare compares two version strings (either SemVer (Major.Minor.Path),</span>
+<span class="c1"># or CalVer (YY.MM) version strings. It returns 0 (success) if version A is newer</span>
+<span class="c1"># or equal than version B, or 1 (fail) otherwise. Patch releases and pre-release</span>
+<span class="c1"># (-alpha/-beta) are not taken into account</span>
+<span class="c1">#</span>
+<span class="c1"># examples:</span>
+<span class="c1">#</span>
+<span class="c1"># version_compare 23.0.0 20.10 // 0 (success)</span>
+<span class="c1"># version_compare 23.0 20.10   // 0 (success)</span>
+<span class="c1"># version_compare 20.10 19.03  // 0 (success)</span>
+<span class="c1"># version_compare 20.10 20.10  // 0 (success)</span>
+<span class="c1"># version_compare 19.03 20.10  // 1 (fail)</span>
+version_compare<span class="o">()</span><span class="w"> </span><span class="o">(</span>
+<span class="w">    </span><span class="nb">set</span><span class="w"> </span>+x
+
+<span class="w">    </span><span class="nv">yy_a</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f1<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">yy_b</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f1<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$yy_a</span><span class="s2">&quot;</span><span class="w"> </span>-lt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$yy_b</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$yy_a</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$yy_b</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nv">mm_a</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f2<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">mm_b</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f2<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="c1"># trim leading zeros to accommodate CalVer</span>
+<span class="w">    </span><span class="nv">mm_a</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">mm_a</span><span class="p">#0</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">mm_b</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">mm_b</span><span class="p">#0</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">mm_a</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-lt<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">mm_b</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="o">)</span>
+
+is_dry_run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DRY_RUN</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="o">}</span>
+
+is_wsl<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>*microsoft*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">;;</span><span class="w"> </span><span class="c1"># WSL 2</span>
+<span class="w">    </span>*Microsoft*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">;;</span><span class="w"> </span><span class="c1"># WSL 1</span>
+<span class="w">    </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span>false<span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="o">}</span>
+
+is_darwin<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>*darwin*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>*Darwin*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span>false<span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="o">}</span>
+
+deprecation_notice<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">distro</span><span class="o">=</span><span class="nv">$1</span>
+<span class="w">    </span><span class="nv">distro_version</span><span class="o">=</span><span class="nv">$2</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\033[91;1mDEPRECATION WARNING\033[0m\n&quot;</span>
+<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;    This Linux distribution (\033[1m%s %s\033[0m) reached end-of-life and is no longer </span>
+<span class="s2">supported by this script.\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$distro</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$distro_version</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w">   </span><span class="s2">&quot;    No updates or security fixes will be released for this distribution, and users are </span>
+<span class="s2">recommended&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w">   </span><span class="s2">&quot;    to upgrade to a currently maintained version of </span><span class="nv">$distro</span><span class="s2">.&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">printf</span><span class="w">   </span><span class="s2">&quot;Press \033[1mCtrl+C\033[0m now to abort this script, or wait for the installation to </span>
+<span class="s2">continue.&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">10</span>
+<span class="o">}</span>
+
+get_distribution<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">lsb_dist</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="c1"># Every system that we officially support has /etc/os-release</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nv">lsb_dist</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ID</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="c1"># Returning an empty string here should be alright since the</span>
+<span class="w">    </span><span class="c1"># case statements don&#39;t act unless you provide an actual value</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+echo_docker_as_nonroot<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span>/var/run/docker.sock<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="o">(</span>
+<span class="w">            </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">            </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s1">&#39;docker version&#39;</span>
+<span class="w">        </span><span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># intentionally mixed spaces and tabs here -- tabs are stripped by &quot;&lt;&lt;-EOF&quot;, spaces are kept in the </span>
+output
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;================================================================================&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;20.10&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;To run Docker as a non-privileged user, consider setting up the&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Docker daemon in rootless mode for your user:&quot;</span>
+<span class="w">        </span><span class="nb">echo</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;    dockerd-rootless-setuptool.sh install&quot;</span>
+<span class="w">        </span><span class="nb">echo</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;To run the Docker daemon as a fully privileged service, but granting non-root&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;users access, refer to https://docs.docker.com/go/daemon-access/&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;WARNING: Access to the remote API on a privileged Docker daemon is equivalent&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;         to root access on the host. Refer to the &#39;Docker daemon attack surface&#39;&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;         documentation for details: https://docs.docker.com/go/attack-surface/&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;================================================================================&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="o">}</span>
+
+<span class="c1"># Check if this is a forked Linux distro</span>
+check_forked<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span><span class="c1"># Check for lsb_release command existence, it usually exists in forked distros</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>lsb_release<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c1"># Check if the `-u` option is supported</span>
+<span class="w">        </span><span class="nb">set</span><span class="w"> </span>+e
+<span class="w">        </span>lsb_release<span class="w"> </span>-a<span class="w"> </span>-u<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="w">        </span><span class="nv">lsb_release_exit_code</span><span class="o">=</span><span class="nv">$?</span>
+<span class="w">        </span><span class="nb">set</span><span class="w"> </span>-e
+
+<span class="w">        </span><span class="c1"># Check if the command has exited successfully, it means we&#39;re in a forked distro</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_release_exit_code</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="c1"># Print info about current distro</span>
+<span class="w">            </span>cat<span class="w"> </span><span class="s">&lt;&lt;-EOF</span>
+<span class="s">            You&#39;re using &#39;$lsb_dist&#39; version &#39;$dist_version&#39;.</span>
+<span class="s">            EOF</span>
+
+<span class="w">            </span><span class="c1"># Get the upstream release info</span>
+<span class="w">            </span><span class="nv">lsb_dist</span><span class="o">=</span><span class="k">$(</span>lsb_release<span class="w"> </span>-a<span class="w"> </span>-u<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;[:upper:]&#39;</span><span class="w"> </span><span class="s1">&#39;[:lower:]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>
+-d<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;[:space:]&#39;</span><span class="k">)</span>
+<span class="w">            </span><span class="nv">dist_version</span><span class="o">=</span><span class="k">$(</span>lsb_release<span class="w"> </span>-a<span class="w"> </span>-u<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;[:upper:]&#39;</span><span class="w"> </span><span class="s1">&#39;[:lower:]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span>
+<span class="s1">&#39;codename&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;[:space:]&#39;</span><span class="k">)</span>
+
+<span class="w">            </span><span class="c1"># Print info about upstream distro</span>
+<span class="w">            </span>cat<span class="w"> </span><span class="s">&lt;&lt;-EOF</span>
+<span class="s">            Upstream release is &#39;$lsb_dist&#39; version &#39;$dist_version&#39;.</span>
+<span class="s">            EOF</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span>/etc/debian_version<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;ubuntu&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>
+<span class="s2">&quot;raspbian&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;osmc&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="c1"># OSMC runs Raspbian</span>
+<span class="w">                    </span><span class="nv">lsb_dist</span><span class="o">=</span>raspbian
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="c1"># We&#39;re Debian and don&#39;t even know it!</span>
+<span class="w">                    </span><span class="nv">lsb_dist</span><span class="o">=</span>debian
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>sed<span class="w"> </span><span class="s1">&#39;s/\/.*//&#39;</span><span class="w"> </span>/etc/debian_version<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/\..*//&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">                    </span><span class="m">12</span><span class="o">)</span>
+<span class="w">                        </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;bookworm&quot;</span>
+<span class="w">                    </span><span class="p">;;</span>
+<span class="w">                    </span><span class="m">11</span><span class="o">)</span>
+<span class="w">                        </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;bullseye&quot;</span>
+<span class="w">                    </span><span class="p">;;</span>
+<span class="w">                    </span><span class="m">10</span><span class="o">)</span>
+<span class="w">                        </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;buster&quot;</span>
+<span class="w">                    </span><span class="p">;;</span>
+<span class="w">                    </span><span class="m">9</span><span class="o">)</span>
+<span class="w">                        </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;stretch&quot;</span>
+<span class="w">                    </span><span class="p">;;</span>
+<span class="w">                    </span><span class="m">8</span><span class="o">)</span>
+<span class="w">                        </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;jessie&quot;</span>
+<span class="w">                    </span><span class="p">;;</span>
+<span class="w">                </span><span class="k">esac</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">        </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="o">}</span>
+
+do_install<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# Executing docker install script, commit: </span><span class="nv">$SCRIPT_COMMIT_SHA</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>docker<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>cat<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s">&lt;&lt;-&#39;EOF&#39;</span>
+<span class="s">            Warning: the &quot;docker&quot; command appears to already exist on this system.</span>
+
+<span class="s">            If you already have Docker installed, this script can cause trouble, which is</span>
+<span class="s">            why we&#39;re displaying this warning and provide the opportunity to cancel the</span>
+<span class="s">            installation.</span>
+
+<span class="s">            If you installed the current Docker package using this script and are using it</span>
+<span class="s">            again to update Docker, you can ignore this message, but be aware that the</span>
+<span class="s">            script resets any custom changes in the deb and rpm repo configuration</span>
+<span class="s">            files to match the parameters passed to the script.</span>
+
+<span class="s">            You may press Ctrl+C now to abort this script.</span>
+<span class="s">        EOF</span>
+<span class="w">        </span><span class="o">(</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>-x<span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">)</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="nv">user</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>id<span class="w"> </span>-un<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span><span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="nv">sh_c</span><span class="o">=</span><span class="s1">&#39;sh -c&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$user</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>sudo<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="nv">sh_c</span><span class="o">=</span><span class="s1">&#39;sudo -E sh -c&#39;</span>
+<span class="w">        </span><span class="k">elif</span><span class="w"> </span>command_exists<span class="w"> </span>su<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="nv">sh_c</span><span class="o">=</span><span class="s1">&#39;su -c&#39;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span>cat<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s">&lt;&lt;-&#39;EOF&#39;</span>
+<span class="s">            Error: this installer needs the ability to run commands as root.</span>
+<span class="s">            We are unable to find either &quot;sudo&quot; or &quot;su&quot; available to make this happen.</span>
+<span class="s">            EOF</span>
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nv">sh_c</span><span class="o">=</span><span class="s2">&quot;echo&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># perform some very rudimentary platform detection</span>
+<span class="w">    </span><span class="nv">lsb_dist</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span>get_distribution<span class="w"> </span><span class="k">)</span>
+<span class="w">    </span><span class="nv">lsb_dist</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;[:upper:]&#39;</span><span class="w"> </span><span class="s1">&#39;[:lower:]&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>is_wsl<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;WSL DETECTED: We recommend using Docker Desktop for Windows.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Please get Docker Desktop from https://www.docker.com/products/docker-desktop/&quot;</span>
+<span class="w">        </span><span class="nb">echo</span>
+<span class="w">        </span>cat<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s">&lt;&lt;-&#39;EOF&#39;</span>
+
+<span class="s">            You may press Ctrl+C now to abort this script.</span>
+<span class="s">        EOF</span>
+<span class="w">        </span><span class="o">(</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>-x<span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">)</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+
+<span class="w">        </span>ubuntu<span class="o">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>lsb_release<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>lsb_release<span class="w"> </span>--codename<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f2<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span>/etc/lsb-release<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>.<span class="w"> </span>/etc/lsb-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DISTRIB_CODENAME</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">        </span><span class="p">;;</span>
+
+<span class="w">        </span>debian<span class="p">|</span>raspbian<span class="o">)</span>
+<span class="w">            </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>sed<span class="w"> </span><span class="s1">&#39;s/\/.*//&#39;</span><span class="w"> </span>/etc/debian_version<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/\..*//&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">                </span><span class="m">12</span><span class="o">)</span>
+<span class="w">                    </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;bookworm&quot;</span>
+<span class="w">                </span><span class="p">;;</span>
+<span class="w">                </span><span class="m">11</span><span class="o">)</span>
+<span class="w">                    </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;bullseye&quot;</span>
+<span class="w">                </span><span class="p">;;</span>
+<span class="w">                </span><span class="m">10</span><span class="o">)</span>
+<span class="w">                    </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;buster&quot;</span>
+<span class="w">                </span><span class="p">;;</span>
+<span class="w">                </span><span class="m">9</span><span class="o">)</span>
+<span class="w">                    </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;stretch&quot;</span>
+<span class="w">                </span><span class="p">;;</span>
+<span class="w">                </span><span class="m">8</span><span class="o">)</span>
+<span class="w">                    </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;jessie&quot;</span>
+<span class="w">                </span><span class="p">;;</span>
+<span class="w">            </span><span class="k">esac</span>
+<span class="w">        </span><span class="p">;;</span>
+
+<span class="w">        </span>centos<span class="p">|</span>rhel<span class="o">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION_ID</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">        </span><span class="p">;;</span>
+
+<span class="w">        </span>*<span class="o">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>lsb_release<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>lsb_release<span class="w"> </span>--release<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f2<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nv">dist_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION_ID</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">        </span><span class="p">;;</span>
+
+<span class="w">    </span><span class="k">esac</span>
+
+<span class="w">    </span><span class="c1"># Check if this is a forked Linux distro</span>
+<span class="w">    </span>check_forked
+
+<span class="w">    </span><span class="c1"># Print deprecation warnings for distro versions that recently reached EOL,</span>
+<span class="w">    </span><span class="c1"># but may still be commonly used (especially LTS versions).</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">.</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span>centos.8<span class="p">|</span>centos.7<span class="p">|</span>rhel.7<span class="o">)</span>
+<span class="w">            </span>deprecation_notice<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>debian.buster<span class="p">|</span>debian.stretch<span class="p">|</span>debian.jessie<span class="o">)</span>
+<span class="w">            </span>deprecation_notice<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>raspbian.buster<span class="p">|</span>raspbian.stretch<span class="p">|</span>raspbian.jessie<span class="o">)</span>
+<span class="w">            </span>deprecation_notice<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>ubuntu.bionic<span class="p">|</span>ubuntu.xenial<span class="p">|</span>ubuntu.trusty<span class="o">)</span>
+<span class="w">            </span>deprecation_notice<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="p">;;</span>
+
+ubuntu.mantic<span class="p">|</span>ubuntu.lunar<span class="p">|</span>ubuntu.kinetic<span class="p">|</span>ubuntu.impish<span class="p">|</span>ubuntu.hirsute<span class="p">|</span>ubuntu.groovy<span class="p">|</span>ubuntu.eoan<span class="p">|</span>ubuntu.disco<span class="p">|</span>
+ubuntu.cosmic<span class="o">)</span>
+<span class="w">            </span>deprecation_notice<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>fedora.*<span class="o">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span>deprecation_notice<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+
+<span class="w">    </span><span class="c1"># Run setup for each distro accordingly</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span>ubuntu<span class="p">|</span>debian<span class="p">|</span>raspbian<span class="o">)</span>
+<span class="w">            </span><span class="nv">pre_reqs</span><span class="o">=</span><span class="s2">&quot;ca-certificates curl&quot;</span>
+<span class="w">            </span><span class="nv">apt_repo</span><span class="o">=</span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> </span>
+<span class="s2">signed-by=/etc/apt/keyrings/docker.asc] </span><span class="nv">$DOWNLOAD_URL</span><span class="s2">/linux/</span><span class="nv">$lsb_dist</span><span class="s2"> </span><span class="nv">$dist_version</span><span class="s2"> </span><span class="nv">$CHANNEL</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="o">(</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s1">&#39;apt-get -qq update &gt;/dev/null&#39;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;DEBIAN_FRONTEND=noninteractive apt-get -y -qq install </span><span class="nv">$pre_reqs</span><span class="s2"> </span>
+<span class="s2">&gt;/dev/null&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s1">&#39;install -m 0755 -d /etc/apt/keyrings&#39;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;curl -fsSL \&quot;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">/linux/</span><span class="nv">$lsb_dist</span><span class="s2">/gpg\&quot; -o </span>
+<span class="s2">/etc/apt/keyrings/docker.asc&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;chmod a+r /etc/apt/keyrings/docker.asc&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;echo \&quot;</span><span class="nv">$apt_repo</span><span class="s2">\&quot; &gt; /etc/apt/sources.list.d/docker.list&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s1">&#39;apt-get -qq update &gt;/dev/null&#39;</span>
+<span class="w">            </span><span class="o">)</span>
+<span class="w">            </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# WARNING: VERSION pinning is not supported in DRY_RUN&quot;</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="c1"># Will work for incomplete versions IE (17.12), but may not actually </span>
+grab<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;latest&quot;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span><span class="nb">test</span><span class="w"> </span>channel
+<span class="w">                    </span><span class="nv">pkg_pattern</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/-ce-/~ce~.*/g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>
+<span class="s1">&#39;s/-/.*/g&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="nv">search_command</span><span class="o">=</span><span class="s2">&quot;apt-cache madison docker-ce | grep &#39;</span><span class="nv">$pkg_pattern</span><span class="s2">&#39; | </span>
+<span class="s2">head -1 | awk &#39;{\$1=\$1};1&#39; | cut -d&#39; &#39; -f 3&quot;</span>
+<span class="w">                    </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$search_command</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: Searching repository for VERSION &#39;</span><span class="nv">$VERSION</span><span class="s2">&#39;&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: </span><span class="nv">$search_command</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nb">echo</span>
+<span class="w">                        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ERROR: &#39;</span><span class="nv">$VERSION</span><span class="s2">&#39; not found amongst apt-cache madison </span>
+<span class="s2">results&quot;</span>
+<span class="w">                        </span><span class="nb">echo</span>
+<span class="w">                        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;18.09&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                            </span><span class="nv">search_command</span><span class="o">=</span><span class="s2">&quot;apt-cache madison docker-ce-cli | </span>
+<span class="s2">grep &#39;</span><span class="nv">$pkg_pattern</span><span class="s2">&#39; | head -1 | awk &#39;{\$1=\$1};1&#39; | cut -d&#39; &#39; -f 3&quot;</span>
+<span class="w">                            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: </span><span class="nv">$search_command</span><span class="s2">&quot;</span>
+<span class="w">                            </span><span class="nv">cli_pkg_version</span><span class="o">=</span><span class="s2">&quot;=</span><span class="k">$(</span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$search_command</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;=</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="o">(</span>
+<span class="w">                </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;docker-ce</span><span class="si">${</span><span class="nv">pkg_version</span><span class="p">%=</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;18.09&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="c1"># older versions didn&#39;t ship the cli and containerd as </span>
+separate<span class="w"> </span>packages
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-ce-cli</span><span class="si">${</span><span class="nv">cli_pkg_version</span><span class="p">%=</span><span class="si">}</span><span class="s2"> containerd.io&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;20.10&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-compose-plugin </span>
+<span class="s2">docker-ce-rootless-extras</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;23.0&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-buildx-plugin&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;DEBIAN_FRONTEND=noninteractive apt-get -y -qq install </span><span class="nv">$pkgs</span><span class="s2"> &gt;/dev/null&quot;</span>
+<span class="w">            </span><span class="o">)</span>
+<span class="w">            </span>echo_docker_as_nonroot
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>centos<span class="p">|</span>fedora<span class="p">|</span>rhel<span class="o">)</span>
+<span class="w">            </span><span class="nv">repo_file_url</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">/linux/</span><span class="nv">$lsb_dist</span><span class="s2">/</span><span class="nv">$REPO_FILE</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="o">(</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>dnf5<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf -y -q --setopt=install_weak_deps=False install </span>
+<span class="s2">dnf-plugins-core&quot;</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf5 config-manager addrepo --overwrite </span>
+<span class="s2">--save-filename=docker-ce.repo --from-repofile=&#39;</span><span class="nv">$repo_file_url</span><span class="s2">&#39;&quot;</span>
+
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHANNEL</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;stable&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf5 config-manager setopt \&quot;docker-ce-*.enabled=0\&quot;&quot;</span>
+<span class="w">                        </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf5 config-manager setopt </span>
+<span class="s2">\&quot;docker-ce-</span><span class="nv">$CHANNEL</span><span class="s2">.enabled=1\&quot;&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf makecache&quot;</span>
+<span class="w">                </span><span class="k">elif</span><span class="w"> </span>command_exists<span class="w"> </span>dnf<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf -y -q --setopt=install_weak_deps=False install </span>
+<span class="s2">dnf-plugins-core&quot;</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;rm -f /etc/yum.repos.d/docker-ce.repo  </span>
+<span class="s2">/etc/yum.repos.d/docker-ce-staging.repo&quot;</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf config-manager --add-repo </span><span class="nv">$repo_file_url</span><span class="s2">&quot;</span>
+
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHANNEL</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;stable&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf config-manager --set-disabled \&quot;docker-ce-*\&quot;&quot;</span>
+<span class="w">                        </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf config-manager --set-enabled </span>
+<span class="s2">\&quot;docker-ce-</span><span class="nv">$CHANNEL</span><span class="s2">\&quot;&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;dnf makecache&quot;</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;yum -y -q install yum-utils&quot;</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;rm -f /etc/yum.repos.d/docker-ce.repo  </span>
+<span class="s2">/etc/yum.repos.d/docker-ce-staging.repo&quot;</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;yum-config-manager --add-repo </span><span class="nv">$repo_file_url</span><span class="s2">&quot;</span>
+
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHANNEL</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;stable&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;yum-config-manager --disable \&quot;docker-ce-*\&quot;&quot;</span>
+<span class="w">                        </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;yum-config-manager --enable \&quot;docker-ce-</span><span class="nv">$CHANNEL</span><span class="s2">\&quot;&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;yum makecache&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">            </span><span class="o">)</span>
+<span class="w">            </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span>command_exists<span class="w"> </span>dnf<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nv">pkg_manager</span><span class="o">=</span><span class="s2">&quot;dnf&quot;</span>
+<span class="w">                </span><span class="nv">pkg_manager_flags</span><span class="o">=</span><span class="s2">&quot;-y -q --best&quot;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="nv">pkg_manager</span><span class="o">=</span><span class="s2">&quot;yum&quot;</span>
+<span class="w">                </span><span class="nv">pkg_manager_flags</span><span class="o">=</span><span class="s2">&quot;-y -q&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# WARNING: VERSION pinning is not supported in DRY_RUN&quot;</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fedora&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">pkg_suffix</span><span class="o">=</span><span class="s2">&quot;fc</span><span class="nv">$dist_version</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="w">                        </span><span class="nv">pkg_suffix</span><span class="o">=</span><span class="s2">&quot;el&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">pkg_pattern</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/-ce-/\\\\.ce.*/g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>
+<span class="s1">&#39;s/-/.*/g&#39;</span><span class="k">)</span><span class="s2">.*</span><span class="nv">$pkg_suffix</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="nv">search_command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkg_manager</span><span class="s2"> list --showduplicates docker-ce | grep </span>
+<span class="s2">&#39;</span><span class="nv">$pkg_pattern</span><span class="s2">&#39; | tail -1 | awk &#39;{print \$2}&#39;&quot;</span>
+<span class="w">                    </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$search_command</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: Searching repository for VERSION &#39;</span><span class="nv">$VERSION</span><span class="s2">&#39;&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: </span><span class="nv">$search_command</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nb">echo</span>
+<span class="w">                        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ERROR: &#39;</span><span class="nv">$VERSION</span><span class="s2">&#39; not found amongst </span><span class="nv">$pkg_manager</span><span class="s2"> list </span>
+<span class="s2">results&quot;</span>
+<span class="w">                        </span><span class="nb">echo</span>
+<span class="w">                        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;18.09&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="c1"># older versions don&#39;t support a cli package</span>
+<span class="w">                        </span><span class="nv">search_command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkg_manager</span><span class="s2"> list --showduplicates </span>
+<span class="s2">docker-ce-cli | grep &#39;</span><span class="nv">$pkg_pattern</span><span class="s2">&#39; | tail -1 | awk &#39;{print \$2}&#39;&quot;</span>
+<span class="w">                        </span><span class="nv">cli_pkg_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$search_command</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="c1"># Cut out the epoch and prefix with a &#39;-&#39;</span>
+<span class="w">                    </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;-</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="o">(</span>
+<span class="w">                </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;docker-ce</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;18.09&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="c1"># older versions didn&#39;t ship the cli and containerd as separate </span>
+packages
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cli_pkg_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-ce-cli-</span><span class="nv">$cli_pkg_version</span><span class="s2"> containerd.io&quot;</span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-ce-cli containerd.io&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;20.10&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-compose-plugin </span>
+<span class="s2">docker-ce-rootless-extras</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;23.0&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-buildx-plugin&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pkg_manager</span><span class="s2"> </span><span class="nv">$pkg_manager_flags</span><span class="s2"> install </span><span class="nv">$pkgs</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="o">)</span>
+<span class="w">            </span>echo_docker_as_nonroot
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>sles<span class="o">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;s390x&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Packages for SLES are currently only available for s390x&quot;</span>
+<span class="w">                </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="nv">repo_file_url</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$DOWNLOAD_URL</span><span class="s2">/linux/</span><span class="nv">$lsb_dist</span><span class="s2">/</span><span class="nv">$REPO_FILE</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">pre_reqs</span><span class="o">=</span><span class="s2">&quot;ca-certificates curl libseccomp2 awk&quot;</span>
+<span class="w">            </span><span class="o">(</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;zypper install -y </span><span class="nv">$pre_reqs</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;rm -f /etc/zypp/repos.d/docker-ce-*.repo&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;zypper addrepo </span><span class="nv">$repo_file_url</span><span class="s2">&quot;</span>
+
+
+<span class="nv">opensuse_factory_url</span><span class="o">=</span><span class="s2">&quot;https://download.opensuse.org/repositories/security:/SELinux/openSUSE_Factory/&quot;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>zypper<span class="w"> </span>lr<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">opensuse_factory_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nv">opensuse_repo</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">opensuse_factory_url</span><span class="si">}</span><span class="s2">security:SELinux.repo&quot;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span>cat<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s">&lt;&lt;- EOF</span>
+<span class="s">                            WARNING!!</span>
+<span class="s">                            openSUSE repository ($opensuse_repo) will be enabled </span>
+<span class="s">now.</span>
+<span class="s">                            Do you wish to continue?</span>
+<span class="s">                            You may press Ctrl+C now to abort this script.</span>
+<span class="s">                        EOF</span>
+<span class="w">                        </span><span class="o">(</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>-x<span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">)</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;zypper addrepo </span><span class="nv">$opensuse_repo</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;zypper --gpg-auto-import-keys refresh&quot;</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;zypper lr -d&quot;</span>
+<span class="w">            </span><span class="o">)</span>
+<span class="w">            </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# WARNING: VERSION pinning is not supported in DRY_RUN&quot;</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="nv">pkg_pattern</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/-ce-/\\\\.ce.*/g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>
+<span class="s1">&#39;s/-/.*/g&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="nv">search_command</span><span class="o">=</span><span class="s2">&quot;zypper search -s --match-exact &#39;docker-ce&#39; | grep </span>
+<span class="s2">&#39;</span><span class="nv">$pkg_pattern</span><span class="s2">&#39; | tail -1 | awk &#39;{print \$6}&#39;&quot;</span>
+<span class="w">                    </span><span class="nv">pkg_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$search_command</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: Searching repository for VERSION &#39;</span><span class="nv">$VERSION</span><span class="s2">&#39;&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;INFO: </span><span class="nv">$search_command</span><span class="s2">&quot;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nb">echo</span>
+<span class="w">                        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ERROR: &#39;</span><span class="nv">$VERSION</span><span class="s2">&#39; not found amongst zypper list results&quot;</span>
+<span class="w">                        </span><span class="nb">echo</span>
+<span class="w">                        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                    </span><span class="nv">search_command</span><span class="o">=</span><span class="s2">&quot;zypper search -s --match-exact &#39;docker-ce-cli&#39; | grep </span>
+<span class="s2">&#39;</span><span class="nv">$pkg_pattern</span><span class="s2">&#39; | tail -1 | awk &#39;{print \$6}&#39;&quot;</span>
+<span class="w">                    </span><span class="c1"># It&#39;s okay for cli_pkg_version to be blank, since older versions </span>
+don<span class="s1">&#39;t support a cli package</span>
+<span class="s1">                    cli_pkg_version=&quot;$($sh_c &quot;$search_command&quot;)&quot;</span>
+<span class="s1">                    pkg_version=&quot;-$pkg_version&quot;</span>
+<span class="s1">                fi</span>
+<span class="s1">            fi</span>
+<span class="s1">            (</span>
+<span class="s1">                pkgs=&quot;docker-ce$pkg_version&quot;</span>
+<span class="s1">                if version_gte &quot;18.09&quot;; then</span>
+<span class="s1">                    if [ -n &quot;$cli_pkg_version&quot; ]; then</span>
+<span class="s1">                        # older versions didn&#39;</span>t<span class="w"> </span>ship<span class="w"> </span>the<span class="w"> </span>cli<span class="w"> </span>and<span class="w"> </span>containerd<span class="w"> </span>as<span class="w"> </span>
+separate<span class="w"> </span>packages
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-ce-cli-</span><span class="nv">$cli_pkg_version</span><span class="s2"> containerd.io&quot;</span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-ce-cli containerd.io&quot;</span>
+<span class="w">                    </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;20.10&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-compose-plugin </span>
+<span class="s2">docker-ce-rootless-extras</span><span class="nv">$pkg_version</span><span class="s2">&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>version_gte<span class="w"> </span><span class="s2">&quot;23.0&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                        </span><span class="nv">pkgs</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$pkgs</span><span class="s2"> docker-buildx-plugin&quot;</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_dry_run<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">set</span><span class="w"> </span>-x
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">                </span><span class="nv">$sh_c</span><span class="w"> </span><span class="s2">&quot;zypper -q install -y </span><span class="nv">$pkgs</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="o">)</span>
+<span class="w">            </span>echo_docker_as_nonroot
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">        </span>*<span class="o">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lsb_dist</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span>is_darwin<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="nb">echo</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ERROR: Unsupported operating system &#39;macOS&#39;&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Please get Docker Desktop from </span>
+<span class="s2">https://www.docker.com/products/docker-desktop&quot;</span>
+<span class="w">                    </span><span class="nb">echo</span>
+<span class="w">                    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">                </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="nb">echo</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ERROR: Unsupported distribution &#39;</span><span class="nv">$lsb_dist</span><span class="s2">&#39;&quot;</span>
+<span class="w">            </span><span class="nb">echo</span>
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="o">}</span>
+
+<span class="c1"># wrapped up in a function so that we have some protection against only getting</span>
+<span class="c1"># half the file during &quot;curl | sh&quot;</span>
+do_install
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 Mkdox curlpipebash &bull; pforret
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.integrate", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
