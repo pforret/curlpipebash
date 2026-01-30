@@ -1,0 +1,62 @@
+---
+title: "claude.ai/install.sh"
+categories:
+  - script
+  - claude.ai
+date: 2026-01-30
+---
+
+The Claude Code installer is a compact 149-line bootstrap script invoked via `curl -fsSL https://claude.ai/install.sh | bash`. It downloads a platform-specific `claude` binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to `claude install` — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when `jq` is not available, and detects musl libc on Linux to select the correct binary variant.
+
+<!-- more -->
+
+## Script info
+
+| | |
+|---|---|
+| **URL** | `https://claude.ai/install.sh` |
+| **Invocation** | `curl -fsSL https://claude.ai/install.sh \| bash` |
+| **Total lines** | 149 |
+| **Comments** | 18 lines |
+| **Blank** | 26 lines |
+| **Boilerplate** | 2 lines (output formatting) |
+| **Installation** | 102 lines (actual work) |
+
+## What does it change?
+
+### Files and folders
+
+- Creates `~/.claude/downloads/` for the temporary binary download
+- Downloads the `claude` binary to `~/.claude/downloads/claude-<version>-<platform>` — this file is deleted after installation completes
+- The real persistent installation (launcher binary, shell integration) is performed by `claude install`, which the script invokes on the downloaded binary at line 142. The bootstrap script itself leaves no permanent files behind.
+
+### Downloads
+
+- Fetches the latest version string from `https://storage.googleapis.com/claude-code-dist-.../claude-code-releases/latest`
+- Fetches `manifest.json` for the resolved version, which contains per-platform SHA-256 checksums
+- Downloads the platform-specific `claude` binary from the same GCS bucket
+- All downloads use `curl` (preferred) or `wget` as fallback; the `download_file()` function wraps both
+
+### Permissions
+
+- Sets the downloaded binary as executable (`chmod +x`) before running `claude install`
+
+## Uninstall
+
+The bootstrap script itself is stateless — it cleans up its download automatically. To remove the installed Claude Code CLI, run:
+
+```bash
+claude uninstall
+```
+
+If the `claude` command is no longer available, remove the installation directory manually:
+
+```bash
+rm -rf ~/.claude
+```
+
+Check your shell profile (`.bashrc`, `.zshrc`, etc.) for any sourcing lines added by `claude install` and remove them.
+
+## Full source
+
+The full script source is saved as [`docs/scripts/claude_ai_install_sh.txt`](../../docs/scripts/claude_ai_install_sh.txt).

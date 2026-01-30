@@ -260,24 +260,6 @@
   
 
       
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="examples/raw.githubusercontent.com.fb/" class="md-tabs__link">
-          
-  
-  Examples
-
-        </a>
-      </li>
-    
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -379,6 +361,15 @@
   
     <nav class="md-nav" aria-label="Recent posts">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claudeaiinstallsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      claude.ai/install.sh
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#getdockercom" class="md-nav__link">
@@ -699,6 +690,29 @@
   
   
     <li class="md-nav__item">
+      <a href="blog/category/claudeai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    claude.ai
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="blog/category/frankenphpdev/" class="md-nav__link">
         
   
@@ -866,72 +880,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Examples
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Examples
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/raw.githubusercontent.com.fb/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    /nvm-sh/nvm/v0.40.1/install.sh
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -949,6 +897,9 @@
 
 <h1 id="curl-bash">curl | bash<a class="headerlink" href="#curl-bash" title="Permanent link">&para;</a></h1>
 <h2 id="recent-posts">Recent posts<a class="headerlink" href="#recent-posts" title="Permanent link">&para;</a></h2>
+<h3 id="claudeaiinstallsh"><a href="blog/2026/01/claudeaiinstallsh/">claude.ai/install.sh</a><a class="headerlink" href="#claudeaiinstallsh" title="Permanent link">&para;</a></h3>
+<p><em>Jan 30, 2026</em></p>
+<p>The Claude Code installer is a compact 149-line bootstrap script invoked via <code>curl -fsSL https://claude.ai/install.sh | bash</code>. It downloads a platform-specific <code>claude</code> binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to <code>claude install</code> — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when <code>jq</code> is not available, and detects musl libc on Linux to select the correct binary variant.</p>
 <h3 id="getdockercom"><a href="blog/2026/01/getdockercom/">get.docker.com</a><a class="headerlink" href="#getdockercom" title="Permanent link">&para;</a></h3>
 <p><em>Jan 30, 2026</em></p>
 <p>The Docker convenience install script at <code>get.docker.com</code> is a substantial 764-line shell script that configures Docker's official package repositories and installs Docker Engine, CLI, containerd, Compose, Buildx, rootless extras, and (as of v28.2) the Docker Model plugin on Linux systems via <code>curl -fsSL https://get.docker.com | bash</code>. It supports Debian/Ubuntu/Raspbian (apt), CentOS/Fedora/RHEL (dnf/yum), handles architecture detection, version pinning, channel selection (stable/test), and China mirror support (Aliyun, Azure). The entire script body is wrapped in a <code>do_install()</code> function as protection against partial downloads during pipe execution — a classic defensive pattern. Roughly 150 lines are comments, including a 97-line header that doubles as thorough usage documentation.</p>

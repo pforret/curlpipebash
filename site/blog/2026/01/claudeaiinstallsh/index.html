@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">
+        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/claudeaiinstallsh/">
       
       
-        <link rel="prev" href="../sdkcloudgooglecom/">
+        <link rel="prev" href="../frankenphpdevinstallsh/">
       
-      
-        <link rel="next" href="../rawgithubusercontentcombasherpmbashermasterinstallsh/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
@@ -27,7 +25,7 @@
     
     
       
-        <title>raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh - curl | bash</title>
+        <title>claude.ai/install.sh - curl | bash</title>
       
     
     
@@ -121,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh
+              claude.ai/install.sh
             
           </span>
         </div>
@@ -813,7 +811,7 @@
                             in
                             
                               <a href="../../../category/script/">script</a>, 
-                              <a href="../../../category/rawgithubusercontentcom/">raw.githubusercontent.com</a></span>
+                              <a href="../../../category/claudeai/">claude.ai</a></span>
                         </div>
                       </li>
                     
@@ -887,9 +885,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#environment-changes" class="md-nav__link">
+  <a href="#permissions" class="md-nav__link">
     <span class="md-ellipsis">
-      Environment changes
+      Permissions
     </span>
   </a>
   
@@ -930,9 +928,9 @@
         
 
 
-  <h1>raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</h1>
+  <h1>claude.ai/install.sh</h1>
 
-<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
+<p>The Claude Code installer is a compact 149-line bootstrap script invoked via <code>curl -fsSL https://claude.ai/install.sh | bash</code>. It downloads a platform-specific <code>claude</code> binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to <code>claude install</code> — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when <code>jq</code> is not available, and detects musl libc on Linux to select the correct binary variant.</p>
 <!-- more -->
 
 <h2 id="script-info">Script info<a class="headerlink" href="#script-info" title="Permanent link">&para;</a></h2>
@@ -946,74 +944,62 @@
 <tbody>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</code></td>
+<td><code>https://claude.ai/install.sh</code></td>
 </tr>
 <tr>
 <td><strong>Invocation</strong></td>
-<td><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh \| bash</code></td>
+<td><code>curl -fsSL https://claude.ai/install.sh \| bash</code></td>
 </tr>
 <tr>
 <td><strong>Total lines</strong></td>
-<td>495</td>
+<td>149</td>
 </tr>
 <tr>
 <td><strong>Comments</strong></td>
-<td>52 lines</td>
+<td>18 lines</td>
 </tr>
 <tr>
 <td><strong>Blank</strong></td>
-<td>49 lines</td>
+<td>26 lines</td>
 </tr>
 <tr>
 <td><strong>Boilerplate</strong></td>
-<td>0 lines</td>
+<td>2 lines (output formatting)</td>
 </tr>
 <tr>
 <td><strong>Installation</strong></td>
-<td>393 lines (actual work)</td>
+<td>102 lines (actual work)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="what-does-it-change">What does it change?<a class="headerlink" href="#what-does-it-change" title="Permanent link">&para;</a></h2>
 <h3 id="files-and-folders">Files and folders<a class="headerlink" href="#files-and-folders" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Creates <code>~/.nvm/</code> as the default install directory (or <code>$XDG_CONFIG_HOME/nvm</code> if <code>XDG_CONFIG_HOME</code> is set, or whatever <code>$NVM_DIR</code> points to)</li>
-<li><strong>Git method:</strong> shallow-clones the full <code>nvm-sh/nvm</code> repo into the install directory, checks out the version tag, then runs <code>git reflog expire</code> and <code>git gc --aggressive --prune=now</code> to compact the repo</li>
-<li><strong>Script method:</strong> downloads <code>nvm.sh</code>, <code>nvm-exec</code>, and <code>bash_completion</code> into the install directory</li>
-<li>Sets <code>nvm-exec</code> as executable (<code>chmod a+x</code>)</li>
-<li>Appends sourcing lines to the detected shell profile file (see Environment changes)</li>
+<li>Creates <code>~/.claude/downloads/</code> for the temporary binary download</li>
+<li>Downloads the <code>claude</code> binary to <code>~/.claude/downloads/claude-&lt;version&gt;-&lt;platform&gt;</code> — this file is deleted after installation completes</li>
+<li>The real persistent installation (launcher binary, shell integration) is performed by <code>claude install</code>, which the script invokes on the downloaded binary at line 142. The bootstrap script itself leaves no permanent files behind.</li>
 </ul>
 <h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Git method:</strong> clones from <code>https://github.com/nvm-sh/nvm.git</code> with <code>--depth=1</code></li>
-<li><strong>Script method:</strong> fetches three files in parallel from <code>https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/</code>:<ul>
-<li><code>nvm.sh</code> — the main nvm script</li>
-<li><code>nvm-exec</code> — helper executable</li>
-<li><code>bash_completion</code> — tab completion definitions</li>
+<li>Fetches the latest version string from <code>https://storage.googleapis.com/claude-code-dist-.../claude-code-releases/latest</code></li>
+<li>Fetches <code>manifest.json</code> for the resolved version, which contains per-platform SHA-256 checksums</li>
+<li>Downloads the platform-specific <code>claude</code> binary from the same GCS bucket</li>
+<li>All downloads use <code>curl</code> (preferred) or <code>wget</code> as fallback; the <code>download_file()</code> function wraps both</li>
 </ul>
-</li>
-<li>Supports both <code>curl</code> and <code>wget</code> as download backends; the <code>nvm_download()</code> function translates curl flags to wget equivalents</li>
-<li>If <code>$NODE_VERSION</code> is set, downloads and installs that Node.js version via <code>nvm install</code> after setup</li>
-</ul>
-<h3 id="environment-changes">Environment changes<a class="headerlink" href="#environment-changes" title="Permanent link">&para;</a></h3>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Exports <code>NVM_DIR</code> pointing to the install directory</li>
-<li>Sources <code>$NVM_DIR/nvm.sh</code> to make the <code>nvm</code> command available</li>
-<li>Sources <code>$NVM_DIR/bash_completion</code> for tab completion (bash and zsh profiles only)</li>
-<li>Appends these three lines to the auto-detected shell profile — one of <code>.bashrc</code>, <code>.bash_profile</code>, <code>.zshrc</code>, <code>.zprofile</code>, or <code>.profile</code>, checked in that order based on <code>$SHELL</code>. Set <code>PROFILE=/dev/null</code> to skip profile modification entirely.</li>
+<li>Sets the downloaded binary as executable (<code>chmod +x</code>) before running <code>claude install</code></li>
 </ul>
 <h2 id="uninstall">Uninstall<a class="headerlink" href="#uninstall" title="Permanent link">&para;</a></h2>
-<p>Remove the nvm directory and clean up your shell profile:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NVM_DIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.nvm</span><span class="si">}</span><span class="s2">&quot;</span>
+<p>The bootstrap script itself is stateless — it cleans up its download automatically. To remove the installed Claude Code CLI, run:</p>
+<div class="highlight"><pre><span></span><code>claude<span class="w"> </span>uninstall
 </code></pre></div>
-<p>Then edit your shell profile (e.g. <code>~/.bashrc</code>, <code>~/.zshrc</code>) and remove these lines:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.nvm&quot;</span>
-<span class="o">[</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\.</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span><span class="w">  </span><span class="c1"># This loads nvm</span>
-<span class="o">[</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\.</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span><span class="w">  </span><span class="c1"># This loads nvm bash_completion</span>
+<p>If the <code>claude</code> command is no longer available, remove the installation directory manually:</p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/.claude
 </code></pre></div>
-<p>Any Node.js versions installed via nvm live inside <code>~/.nvm/versions/</code> and are removed with the directory above.</p>
+<p>Check your shell profile (<code>.bashrc</code>, <code>.zshrc</code>, etc.) for any sourcing lines added by <code>claude install</code> and remove them.</p>
 <h2 id="full-source">Full source<a class="headerlink" href="#full-source" title="Permanent link">&para;</a></h2>
-<p>The full script source is saved as <a href="../../docs/scripts/raw_githubusercontent_com_nvm_sh_nvm_v0_40_1_install_sh.txt"><code>docs/scripts/raw_githubusercontent_com_nvm_sh_nvm_v0_40_1_install_sh.txt</code></a>.</p>
+<p>The full script source is saved as <a href="../../docs/scripts/claude_ai_install_sh.txt"><code>docs/scripts/claude_ai_install_sh.txt</code></a>.</p>
 
 
 
