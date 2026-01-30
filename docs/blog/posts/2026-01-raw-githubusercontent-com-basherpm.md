@@ -1,0 +1,89 @@
+---
+title: "raw.githubusercontent.com/basherpm/basher/master/install.sh"
+categories:
+  - script
+  - raw.githubusercontent.com
+date: 2026-01-30
+---
+
+The basher installer is a minimal 61-line bash script that installs [basher](https://github.com/basherpm/basher), a package manager for shell scripts, via `curl -sL https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash`. It git-clones the basher repository into `~/.basher` and appends initialization lines to the user's shell profile. Zero boilerplate — no colors, no banners, no spinners. Every line appended to the shell profile is tagged with the marker `##basher5ea843`, making it trivial to grep and remove them on uninstall. The script supports bash, zsh, sh, and fish, with fish getting its own 5-line initialization block.
+
+<!-- more -->
+
+## Script info
+
+| | |
+|---|---|
+| **URL** | `https://raw.githubusercontent.com/basherpm/basher/master/install.sh` |
+| **Invocation** | `curl -sL https://raw.githubusercontent.com/basherpm/basher/master/install.sh \| bash` |
+| **Total lines** | 61 |
+| **Comments** | 10 lines |
+| **Blank** | 10 lines |
+| **Boilerplate** | 0 lines |
+| **Installation** | 40 lines (actual work) |
+
+## What does it change?
+
+### Files and folders
+
+- Clones the basher repository into `~/.basher` via `git clone https://github.com/basherpm/basher.git ~/.basher`
+- Checks for an existing installation at both `~/.basher` and `$XDG_DATA_HOME/basher` (defaults to `~/.local/share/basher`) and aborts if either exists
+
+### Downloads
+
+- The entire basher repository from `https://github.com/basherpm/basher.git` (via git clone)
+
+### Environment changes
+
+Appends initialization lines to the shell's startup script, selected by `$SHELL`:
+
+- **bash:** appends to `~/.bashrc`
+- **zsh:** appends to `~/.zshrc`
+- **sh:** appends to `~/.profile`
+- **fish:** appends to `~/.config/fish/config.fish`
+
+For bash/zsh/sh, two lines are added:
+
+```bash
+export PATH="$HOME/.basher/bin:$PATH"   ##basher5ea843
+eval "$(basher init - bash)"             ##basher5ea843
+```
+
+For fish, five lines are added:
+
+```fish
+if test -d ~/.basher          ##basher5ea843
+  set basher ~/.basher/bin    ##basher5ea843
+end                           ##basher5ea843
+set -gx PATH $basher $PATH    ##basher5ea843
+status --is-interactive; and . (basher init - fish | psub)    ##basher5ea843
+```
+
+Every appended line is tagged with `##basher5ea843` to enable clean removal. The script requires the startup file to already exist — it aborts if the profile file is missing rather than creating one.
+
+## Uninstall
+
+Remove the basher directory:
+
+```bash
+rm -rf ~/.basher
+```
+
+Remove the tagged lines from your shell profile:
+
+```bash
+# For bash:
+grep -v "basher5ea843" ~/.bashrc > ~/.bashrc.tmp && mv ~/.bashrc.tmp ~/.bashrc
+
+# For zsh:
+grep -v "basher5ea843" ~/.zshrc > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc
+
+# For fish:
+grep -v "basher5ea843" ~/.config/fish/config.fish > ~/.config/fish/config.fish.tmp && mv ~/.config/fish/config.fish.tmp ~/.config/fish/config.fish
+```
+
+No system-level changes, packages, or services need to be reversed.
+
+## Full source
+
+The full script source is saved as [`docs/scripts/raw_githubusercontent_com_basherpm_basher_master_install_sh.txt`](../../scripts/raw_githubusercontent_com_basherpm_basher_master_install_sh.txt).
