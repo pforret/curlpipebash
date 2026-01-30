@@ -2,78 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://curlpipebash.com/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/about/</loc>
-         <lastmod>2025-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/about/features/extensions/</loc>
-         <lastmod>2025-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/about/features/plugins/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2024/01/first-post/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2024/02/second-post/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/2026/01/script-openclawai/</loc>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/frankenphp.dev.5a/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/get.docker.com.ff/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/install.sandstorm.io.69/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/laravel.build.ce/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/php.new.d9/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/raw.githubusercontent.com.0c/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/raw.githubusercontent.com.a3/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/raw.githubusercontent.com.fb/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/examples/sdk.cloud.google.com.5a/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/archive/2026/</loc>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/archive/2024/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/category/analysis/</loc>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/fake/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/content/</loc>
-         <lastmod>2025-02-04</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
 </urlset>
