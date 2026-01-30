@@ -10,10 +10,10 @@
       
       
       
-        <link rel="canonical" href="https://curlpipebash.com/blog/category/analysis/">
+        <link rel="canonical" href="https://curlpipebash.com/blog/category/script/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../phpnew/">
       
       
         <link rel="next" href="../../archive/2026/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Analysis - curl | bash</title>
+        <title>script - curl | bash</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#analysis" class="md-skip">
+        <a href="#script" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Analysis
+              script
             
           </span>
         </div>
@@ -585,6 +585,29 @@
                 
   
   
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../phpnew/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    php.new
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -605,7 +628,7 @@
         
   
   <span class="md-ellipsis">
-    Analysis
+    script
   </span>
   
 
@@ -877,7 +900,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h1>
+        <h1 id="script">script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -891,7 +914,8 @@
           <li class="md-meta__item">
             in
             
-              <a href="./" class="md-meta__link">Analysis</a></li>
+              <a href="./" class="md-meta__link">script</a>, 
+              <a href="../phpnew/" class="md-meta__link">php.new</a></li>
         
         
           
@@ -906,12 +930,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="script-openclawai"><a class="toclink" href="../../2026/01/script-openclawai/">Script: openclaw.ai</a></h2>
-<p>The OpenClaw installer at <code>openclaw.ai/install.sh</code> is a 1407-line bash script that sets up the OpenClaw CLI tool on macOS and Linux (including WSL). It is invoked via <code>curl -fsSL --proto '=https' --tlsv1.2 https://openclaw.ai/install.sh | bash</code>. The script installs prerequisites (Homebrew on macOS, Node.js 22+, Git), then installs OpenClaw either globally via npm or from a git checkout, configures PATH, and optionally runs onboarding and migration steps.</p>
+    <h2 id="phpnewinstallmac"><a class="toclink" href="../../2026/01/phpnewinstallmac/">php.new/install/mac</a></h2>
+<p>The <code>php.new</code> macOS installer is a compact 212-line script that sets up a ready-to-go PHP development environment via <code>curl -sL https://php.new/install/mac | bash</code>. It downloads pre-built binaries for PHP 8.5, Composer, and the Laravel installer from <code>download.herdphp.com</code> — the infrastructure behind Laravel Herd — and drops them into <code>~/.config/herd-lite/bin/</code>. It also fetches the Mozilla CA certificate bundle from <code>curl.se</code>, creates a minimal <code>php.ini</code>, wires <code>PATH</code> and <code>PHP_INI_SCAN_DIR</code> into your shell profile, and generates its own uninstall script. The whole thing is essentially "Herd Lite": a standalone subset of Laravel Herd that skips the GUI and gives you three executables and a config directory.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/01/script-openclawai/">
+        <a href="../../2026/01/phpnewinstallmac/">
           Continue reading
         </a>
       </nav>
