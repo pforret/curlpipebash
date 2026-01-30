@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/sdkcloudgooglecom/">
+        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">
       
       
+        <link rel="prev" href="../sdkcloudgooglecom/">
       
-        <link rel="next" href="../rawgithubusercontentcomnvm-shnvmv0401installsh/">
+      
+        <link rel="next" href="../rawgithubusercontentcombasherpmbashermasterinstallsh/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
@@ -25,7 +27,7 @@
     
     
       
-        <title>sdk.cloud.google.com - curl | bash</title>
+        <title>raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh - curl | bash</title>
       
     
     
@@ -119,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              sdk.cloud.google.com
+              raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh
             
           </span>
         </div>
@@ -872,7 +874,7 @@
                             in
                             
                               <a href="../../../category/script/">script</a>, 
-                              <a href="../../../category/sdkcloudgooglecom/">sdk.cloud.google.com</a></span>
+                              <a href="../../../category/rawgithubusercontentcom/">raw.githubusercontent.com</a></span>
                         </div>
                       </li>
                     
@@ -883,7 +885,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -954,15 +956,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permissions
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -998,13 +991,12 @@
         
 
 
-  <h1>sdk.cloud.google.com</h1>
+  <h1>raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</h1>
 
-<p>The Google Cloud SDK installer uses a two-stage bootstrap: a 17-line stub at <code>sdk.cloud.google.com</code> (invoked via <code>curl -sL https://sdk.cloud.google.com | bash</code>) downloads and executes the real 218-line installer from <code>dl.google.com</code>, which in turn downloads a <code>google-cloud-sdk.tar.gz</code> tarball and runs the bundled <code>install.sh</code> from inside it — three layers deep. The stage 2 script is interactive: it prompts for an installation directory and handles TTY redirection so that prompts work even when the script is piped through bash. It supports both <code>curl</code> and <code>wget</code> for downloads, accepts <code>--disable-prompts</code> and <code>--install-dir</code> flags, and can be configured entirely through environment variables (<code>CLOUDSDK_CORE_DISABLE_PROMPTS</code>, <code>CLOUDSDK_INSTALL_DIR</code>).</p>
+<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
 <!-- more -->
 
 <h2 id="script-info">Script info<a class="headerlink" href="#script-info" title="Permanent link">&para;</a></h2>
-<p><strong>Stage 1 — bootstrap stub</strong> (<code>sdk.cloud.google.com</code>):</p>
 <table>
 <thead>
 <tr>
@@ -1015,23 +1007,23 @@
 <tbody>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>https://sdk.cloud.google.com</code></td>
+<td><code>https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</code></td>
 </tr>
 <tr>
 <td><strong>Invocation</strong></td>
-<td><code>curl -sL https://sdk.cloud.google.com \| bash</code></td>
+<td><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh \| bash</code></td>
 </tr>
 <tr>
 <td><strong>Total lines</strong></td>
-<td>17</td>
+<td>495</td>
 </tr>
 <tr>
 <td><strong>Comments</strong></td>
-<td>0 lines</td>
+<td>52 lines</td>
 </tr>
 <tr>
 <td><strong>Blank</strong></td>
-<td>5 lines</td>
+<td>49 lines</td>
 </tr>
 <tr>
 <td><strong>Boilerplate</strong></td>
@@ -1039,90 +1031,50 @@
 </tr>
 <tr>
 <td><strong>Installation</strong></td>
-<td>11 lines</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Stage 2 — actual installer</strong> (<code>dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash</code>):</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>URL</strong></td>
-<td><code>https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash</code></td>
-</tr>
-<tr>
-<td><strong>Total lines</strong></td>
-<td>218</td>
-</tr>
-<tr>
-<td><strong>Comments</strong></td>
-<td>21 lines</td>
-</tr>
-<tr>
-<td><strong>Blank</strong></td>
-<td>21 lines</td>
-</tr>
-<tr>
-<td><strong>Boilerplate</strong></td>
-<td>21 lines (usage text, echo formatting)</td>
-</tr>
-<tr>
-<td><strong>Installation</strong></td>
-<td>154 lines (actual work)</td>
+<td>393 lines (actual work)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="what-does-it-change">What does it change?<a class="headerlink" href="#what-does-it-change" title="Permanent link">&para;</a></h2>
 <h3 id="files-and-folders">Files and folders<a class="headerlink" href="#files-and-folders" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Creates <code>$HOME/google-cloud-sdk/</code> (or <code>$CLOUDSDK_INSTALL_DIR/google-cloud-sdk/</code> if specified) by extracting the tarball with <code>tar -zxvf</code></li>
-<li>If the destination directory already exists, the script prompts to remove it (or aborts in non-interactive mode)</li>
-<li>After extraction, runs <code>google-cloud-sdk/install.sh</code> — the bundled installer, which handles shell completion, PATH setup, and component installation</li>
-<li>Stage 1 creates a temporary directory via <code>mktemp -d</code> for the download; stage 2 also creates one, both cleaned up via <code>trap</code> on exit</li>
+<li>Creates <code>~/.nvm/</code> as the default install directory (or <code>$XDG_CONFIG_HOME/nvm</code> if <code>XDG_CONFIG_HOME</code> is set, or whatever <code>$NVM_DIR</code> points to)</li>
+<li><strong>Git method:</strong> shallow-clones the full <code>nvm-sh/nvm</code> repo into the install directory, checks out the version tag, then runs <code>git reflog expire</code> and <code>git gc --aggressive --prune=now</code> to compact the repo</li>
+<li><strong>Script method:</strong> downloads <code>nvm.sh</code>, <code>nvm-exec</code>, and <code>bash_completion</code> into the install directory</li>
+<li>Sets <code>nvm-exec</code> as executable (<code>chmod a+x</code>)</li>
+<li>Appends sourcing lines to the detected shell profile file (see Environment changes)</li>
 </ul>
 <h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
-<p><strong>Stage 1 downloads stage 2:</strong></p>
 <ul>
-<li><code>https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash</code> — the 218-line interactive installer, saved to a temp directory</li>
+<li><strong>Git method:</strong> clones from <code>https://github.com/nvm-sh/nvm.git</code> with <code>--depth=1</code></li>
+<li><strong>Script method:</strong> fetches three files in parallel from <code>https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/</code>:<ul>
+<li><code>nvm.sh</code> — the main nvm script</li>
+<li><code>nvm-exec</code> — helper executable</li>
+<li><code>bash_completion</code> — tab completion definitions</li>
 </ul>
-<p><strong>Stage 2 downloads the SDK tarball:</strong></p>
-<ul>
-<li><code>https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz</code> — the full Google Cloud SDK</li>
-<li>Uses <code>curl</code> if available, falls back to <code>wget</code></li>
+</li>
+<li>Supports both <code>curl</code> and <code>wget</code> as download backends; the <code>nvm_download()</code> function translates curl flags to wget equivalents</li>
+<li>If <code>$NODE_VERSION</code> is set, downloads and installs that Node.js version via <code>nvm install</code> after setup</li>
 </ul>
 <h3 id="environment-changes">Environment changes<a class="headerlink" href="#environment-changes" title="Permanent link">&para;</a></h3>
-<p>The stage 2 script itself does not modify environment files — it delegates to the bundled <code>install.sh</code> inside the extracted tarball, which:</p>
 <ul>
-<li>Adds <code>google-cloud-sdk/bin</code> to <code>PATH</code> in your shell profile</li>
-<li>Sets up shell completion for <code>gcloud</code>, <code>gsutil</code>, and <code>bq</code></li>
-<li>Modifies <code>~/.bashrc</code>, <code>~/.zshrc</code>, or <code>~/.config/fish/config.fish</code> depending on the detected shell</li>
-</ul>
-<p>The stage 2 script handles TTY detection: when piped via <code>curl | bash</code>, it redirects stdin from <code>/dev/tty</code> so interactive prompts still work. If no TTY is available, it sets <code>CLOUDSDK_CORE_DISABLE_PROMPTS=1</code> and runs non-interactively.</p>
-<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
-<ul>
-<li>No <code>sudo</code> is used — everything installs into the user's home directory</li>
-<li>Stage 1 sets <code>chmod 775</code> on the downloaded stage 2 script</li>
+<li>Exports <code>NVM_DIR</code> pointing to the install directory</li>
+<li>Sources <code>$NVM_DIR/nvm.sh</code> to make the <code>nvm</code> command available</li>
+<li>Sources <code>$NVM_DIR/bash_completion</code> for tab completion (bash and zsh profiles only)</li>
+<li>Appends these three lines to the auto-detected shell profile — one of <code>.bashrc</code>, <code>.bash_profile</code>, <code>.zshrc</code>, <code>.zprofile</code>, or <code>.profile</code>, checked in that order based on <code>$SHELL</code>. Set <code>PROFILE=/dev/null</code> to skip profile modification entirely.</li>
 </ul>
 <h2 id="uninstall">Uninstall<a class="headerlink" href="#uninstall" title="Permanent link">&para;</a></h2>
-<p>Remove the SDK directory:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/google-cloud-sdk
+<p>Remove the nvm directory and clean up your shell profile:</p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NVM_DIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.nvm</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p>Remove the shell profile lines. The bundled installer adds sourcing lines for <code>path.bash.inc</code> and <code>completion.bash.inc</code> (or the zsh/fish equivalents). Check and remove from your profile:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Look for lines referencing google-cloud-sdk in your profile</span>
-grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;google-cloud-sdk&quot;</span><span class="w"> </span>~/.bashrc<span class="w"> </span>~/.zshrc<span class="w"> </span>~/.profile<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-<span class="c1"># Edit the file(s) to remove those lines</span>
+<p>Then edit your shell profile (e.g. <code>~/.bashrc</code>, <code>~/.zshrc</code>) and remove these lines:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.nvm&quot;</span>
+<span class="o">[</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\.</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span><span class="w">  </span><span class="c1"># This loads nvm</span>
+<span class="o">[</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\.</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span><span class="w">  </span><span class="c1"># This loads nvm bash_completion</span>
 </code></pre></div>
-<p>Optionally remove cached configuration:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/.config/gcloud
-</code></pre></div>
+<p>Any Node.js versions installed via nvm live inside <code>~/.nvm/versions/</code> and are removed with the directory above.</p>
 <h2 id="full-source">Full source<a class="headerlink" href="#full-source" title="Permanent link">&para;</a></h2>
-<p>The full script source is saved as <a href="../../../../scripts/sdk_cloud_google_com.txt"><code>docs/scripts/sdk_cloud_google_com.txt</code></a>.</p>
+<p>The full script source is saved as <a href="../../docs/scripts/raw_githubusercontent_com_nvm_sh_nvm_v0_40_1_install_sh.txt"><code>docs/scripts/raw_githubusercontent_com_nvm_sh_nvm_v0_40_1_install_sh.txt</code></a>.</p>
 
 
 
