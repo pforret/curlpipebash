@@ -13,15 +13,15 @@ The Docker convenience install script at `get.docker.com` is a substantial 764-l
 
 ## Script info
 
-| | |
-|---|---|
-| **URL** | `https://get.docker.com` |
-| **Invocation** | `curl -fsSL https://get.docker.com \| bash` |
-| **Total lines** | 764 |
-| **Comments** | 150 lines (including 97-line header with usage docs) |
-| **Blank** | 50 lines |
-| **Boilerplate** | ~50 lines (deprecation notices, post-install info, version comparison helpers) |
-| **Installation** | ~513 lines (actual work) |
+|                  |                                                                                |
+|------------------|--------------------------------------------------------------------------------|
+| **URL**          | `https://get.docker.com`                                                       |
+| **Invocation**   | `curl -fsSL https://get.docker.com \| bash`                                    |
+| **Total lines**  | 764                                                                            |
+| **Comments**     | 150 lines (including 97-line header with usage docs)                           |
+| **Blank**        | 50 lines                                                                       |
+| **Boilerplate**  | ~50 lines (deprecation notices, post-install info, version comparison helpers) |
+| **Installation** | ~513 lines (actual work)                                                       |
 
 ## What does it change?
 
