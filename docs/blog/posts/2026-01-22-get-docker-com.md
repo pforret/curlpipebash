@@ -19,7 +19,7 @@ Want to containerize your life? Docker's one-liner install script is how million
 |                  |                                                               |
 |------------------|---------------------------------------------------------------|
 | **URL**          | `https://get.docker.com`                                      |
-| **Invocation**   | `curl -fsSL https://get.docker.com \| bash`                   |
+| **Invocation**   | `curl -fsSL https://get.docker.com                            | bash`                   |
 | **Total lines**  | 764                                                           |
 | **Comments**     | 97 lines                                                      |
 | **Blank**        | 35 lines                                                      |

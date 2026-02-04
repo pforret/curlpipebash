@@ -1067,7 +1067,7 @@
 </tr>
 <tr>
 <td><strong>Invocation</strong></td>
-<td><code>curl -fsSL https://openclaw.ai/install.sh \| bash</code></td>
+<td><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></td>
 </tr>
 <tr>
 <td><strong>Total lines</strong></td>
@@ -1169,10 +1169,12 @@ Edit your <code>~/.bashrc</code> and/or <code>~/.zshrc</code> and remove these l
 <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/.npm-global
 npm<span class="w"> </span>config<span class="w"> </span>delete<span class="w"> </span>prefix
 </code></pre></div></p>
-<p><strong>Note:</strong> If the script installed Homebrew, Node.js, or Git, those are generally useful to keep around. But if you really want them gone:
-- Homebrew: <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"</code>
-- Node.js via Homebrew: <code>brew uninstall node@22</code>
-- Node.js via NodeSource: Use your package manager (<code>apt remove nodejs</code> or <code>dnf remove nodejs</code>)</p>
+<p><strong>Note:</strong> If the script installed Homebrew, Node.js, or Git, those are generally useful to keep around. But if you really want them gone:</p>
+<ul>
+<li>Homebrew: <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"</code></li>
+<li>Node.js via Homebrew: <code>brew uninstall node@22</code></li>
+<li>Node.js via NodeSource: Use your package manager (<code>apt remove nodejs</code> or <code>dnf remove nodejs</code>)</li>
+</ul>
 <h2 id="full-source">Full source<a class="headerlink" href="#full-source" title="Permanent link">&para;</a></h2>
 <p>The full script source is saved as <a href="../../../../scripts/openclaw_ai_install_sh.txt"><code>scripts/openclaw_ai_install_sh.txt</code></a>.</p>
 

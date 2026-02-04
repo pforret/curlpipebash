@@ -16,15 +16,15 @@ Ever wished you had a lobster-themed CLI assistant that could automate your term
 
 ## Script info
 
-| | |
-|---|---|
-| **URL** | `https://openclaw.ai/install.sh` |
-| **Invocation** | `curl -fsSL https://openclaw.ai/install.sh \| bash` |
-| **Total lines** | 1416 |
-| **Comments** | 15 lines |
-| **Blank** | 50 lines |
-| **Boilerplate** | ~350 lines (color codes, taglines, usage text, completion messages) |
-| **Installation** | ~1000 lines (actual work) |
+|                  |                                                                    |
+|------------------|--------------------------------------------------------------------|
+| **URL**          | `https://openclaw.ai/install.sh`                                   |
+| **Invocation**   | `curl -fsSL https://openclaw.ai/install.sh | bash`                 |
+| **Total lines**  | 1416                                                               |
+| **Comments**     | 15 lines                                                           |
+| **Blank**        | 50 lines                                                           |
+| **Boilerplate**  | ~350 lines (color codes, taglines, usage text, completion messages) |
+| **Installation** | ~1000 lines (actual work)                                          |
 
 ## What does it change?
 
@@ -116,6 +116,7 @@ npm config delete prefix
 ```
 
 **Note:** If the script installed Homebrew, Node.js, or Git, those are generally useful to keep around. But if you really want them gone:
+
 - Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"`
 - Node.js via Homebrew: `brew uninstall node@22`
 - Node.js via NodeSource: Use your package manager (`apt remove nodejs` or `dnf remove nodejs`)
