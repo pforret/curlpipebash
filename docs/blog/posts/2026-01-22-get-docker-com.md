@@ -5,7 +5,7 @@ image: "/images/get-docker-com.jpg"
 categories:
   - script
   - get.docker.com
-date: 2026-02-04
+date: 2026-01-22
 ---
 
 Want to containerize your life? Docker's one-liner install script is how millions of developers get their container engine up and running on Linux. Run `curl -fsSL https://get.docker.com | bash` and you'll have Docker Engine, Docker CLI, Docker Compose, Buildx, and containerd ready to spin up containers. The script auto-detects your distro, configures package repos, and installs everything with admin privileges.
