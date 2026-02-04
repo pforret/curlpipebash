@@ -95,4 +95,4 @@ rm -rf ~/.config/gcloud
 
 ## Full source
 
-The full script source is saved as [`docs/scripts/sdk_cloud_google_com.txt`](../../scripts/sdk_cloud_google_com.txt).
+The full script source is saved as [`docs/scripts/sdk_cloud_google_com.txt`](../docs/scripts/sdk_cloud_google_com.txt).

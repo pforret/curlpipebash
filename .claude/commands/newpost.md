@@ -18,9 +18,9 @@ Extract the domain name and path from the URL.
 
 ## Step 2: Download the script
 
-1. Create the `scripts/` directory at the project root if it doesn't exist: `mkdir -p scripts`
-2. Build a sanitized filename from the full URL (after removing the scheme): replace all `/`, `.`, and `-` with `_`. Append `.txt`. Example: `https://openclaw.ai/install.sh` → `scripts/openclaw_ai_install_sh.txt`
-3. Download: `curl -sL <URL> -o scripts/<filename>.txt`
+1. Create the `docs/scripts/` directory if it doesn't exist: `mkdir -p docs/scripts`
+2. Build a sanitized filename from the full URL (after removing the scheme): replace all `/`, `.`, and `-` with `_`. Append `.txt`. Example: `https://openclaw.ai/install.sh` → `docs/scripts/openclaw_ai_install_sh.txt`
+3. Download: `curl -sL <URL> -o docs/scripts/<filename>.txt`
 4. Verify the file was downloaded and is non-empty.
 
 ## Step 3: Read and analyze the script
@@ -59,24 +59,50 @@ Determine what the script would change on a machine. Look for:
 
 Summarize each category with specific details from the script.
 
-## Step 5: Create the blog post
+**Writing tone**: Write like a friendly tech enthusiast sharing discoveries with a curious friend. Be warm, conversational, and sprinkle in light humor where appropriate (puns welcome!). Use words like install/copy/overwrite/delete/find/admin permissions — but make it fun, not dry. Don't talk about sudo, grep, cp, mv, rm -fr.
+
+Point out dangerous or irreversible steps, but do it with a helpful "heads up!" vibe rather than alarming language. Think "before you yolo this into your terminal..." rather than "WARNING: DANGER".
+
+You will need to propose an 'uninstall' procedure at the end of the blog post — frame it as "Changed your mind? Here's how to undo things" with a helpful, non-judgmental tone. Keep track of what gets changed/installed/renamed.
+
+## Step 5: create a placeholder image
+
+Create an image with the installed `splashmark` script: 
+
+```
+cd docs/images/ && splashmark -i "<title>" unsplash <common word related to this scriupt> <slug>.jpg
+magick <slug>.jpg -resize 400x400 <slug>_small.jpg
+```
+
+This will create an image `docs/images/<slug>.jpg` which we will use in the blog post.
+This will also create an image `docs/images/<slug>_small.jpg` which we will use on the homepage later.
+
+## Step 6: Create the blog post
+
+**Overall tone for the entire post**: Write with enthusiasm and warmth! Imagine you're a curious developer who just discovered something cool and can't wait to share it. Use casual, conversational language. Rhetorical questions are great ("Ever wanted to...?"). Light jokes and wordplay are encouraged. But stay informative — the reader should learn something useful while having a good time.
 
 Build a slug from the domain: lowercase, replace dots with dashes. Example: `openclaw.ai` → `openclaw-ai`.
+If the domain is a GitHub subdomain, use the repository's name like <author/repo_name> as title and <repo_name> as slug
 
 Get today's date in YYYY-MM-DD format using: `date +%Y-%m-%d`
 
-Create the file `docs/blog/posts/YYYY-MM-<slug>.md` with this structure:
+Create the file `docs/blog/posts/YYYY-MM-DD-<slug>.md` with this structure:
 
-```
+```markdown
 ---
-title: "Script: <domain>"
+title: "<title>"
+image: "/images/<slug>.jpg"
 categories:
-  - Analysis
+  - script
+  - <domain>
 date: <YYYY-MM-DD>
 ---
 
 <summary paragraph: 2-4 sentences describing what this script does, how it's invoked
-(`curl ... | bash`), and the key things it changes on the system. Keep it factual and concise.>
+(`curl ... | bash`), and the key things it changes on the system. Be engaging and hook the reader —
+start with what problem this solves or why someone would want it. Keep it punchy but informative.>
+
+![<slug>](../../images/<slug>.jpg)
 
 <!-- more -->
 
@@ -96,7 +122,8 @@ date: <YYYY-MM-DD>
 
 <For each category of system change found, write a subsection with bullet points
 listing the specific files, packages, downloads, or changes. Only include categories
-that actually apply. Use these subsection headers as appropriate:>
+that actually apply. Add brief, friendly commentary — don't just list things, give context
+about why it matters or what to watch out for. Use these subsection headers as appropriate:>
 
 ### Files and folders
 ### Packages installed
@@ -104,6 +131,12 @@ that actually apply. Use these subsection headers as appropriate:>
 ### Environment changes
 ### Services
 ### Permissions
+
+## Changed your mind?
+
+<Write a friendly uninstall/rollback guide. Explain how to undo what the script did —
+remove installed files, unset environment changes, etc. Keep it practical and reassuring.
+If some changes are hard to reverse, mention that honestly but helpfully.>
 
 ## Full source
 

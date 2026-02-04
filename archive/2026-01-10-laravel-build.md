@@ -13,15 +13,15 @@ The `laravel.build` installer is a compact 52-line script generated server-side 
 
 ## Script info
 
-| | |
-|---|---|
-| **URL** | `https://laravel.build/example-app` |
-| **Invocation** | `curl -sL https://laravel.build/example-app \| bash` |
-| **Total lines** | 52 |
-| **Comments** | 2 lines |
-| **Blank** | 9 lines |
-| **Boilerplate** | 10 lines (color variables, formatted echo output) |
-| **Installation** | 31 lines (actual work) |
+|                  |                                                      |
+|------------------|------------------------------------------------------|
+| **URL**          | `https://laravel.build/example-app`                  |
+| **Invocation**   | `curl -sL https://laravel.build/example-app \| bash` |
+| **Total lines**  | 52                                                   |
+| **Comments**     | 2 lines                                              |
+| **Blank**        | 9 lines                                              |
+| **Boilerplate**  | 10 lines (color variables, formatted echo output)    |
+| **Installation** | 31 lines (actual work)                               |
 
 ## What does it change?
 
@@ -73,4 +73,4 @@ No shell profile, PATH, or system configuration changes need to be reversed.
 
 ## Full source
 
-The full script source is saved as [`docs/scripts/laravel_build_example_app.txt`](../../scripts/laravel_build_example_app.txt).
+The full script source is saved as [`docs/scripts/laravel_build_example_app.txt`](../docs/scripts/laravel_build_example_app.txt).

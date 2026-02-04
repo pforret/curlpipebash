@@ -4,18 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is **curlpipebash.com** — a documentation site that catalogs and analyzes "curl | bash" installation scripts from popular open-source projects (Docker, Homebrew, Laravel, nvm, etc.). Each example page shows the script's purpose, `cloc` stats, and full source code. Built with MkDocs + Material for MkDocs theme, deployed to GitHub Pages.
+This is **curlpipebash.com** — a documentation site that catalogs and analyzes "curl | bash" installation scripts from popular open-source projects (Docker, Homebrew, Laravel, nvm, etc.). Each example page shows the script's purpose, `cloc` stats, and full source code. Built with MkDocs + Material for MkDocs theme, deployed to GitHub Pages at https://pforret.github.io/curlpipebash/.
 
 ## Commands
 
+**Note:** mkdocs is not installed locally. Use `mkdox` (Docker wrapper) instead.
+
 ### Build and serve the site locally
 ```bash
-mkdocs serve
+mkdox serve
 ```
 
 ### Build static site (output to ./site/)
 ```bash
-mkdocs build
+mkdox build
 ```
 
 ### Generate all example documentation pages

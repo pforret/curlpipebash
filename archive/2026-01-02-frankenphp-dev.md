@@ -112,4 +112,4 @@ sudo rm -rf /etc/frankenphp
 
 ## Full source
 
-The full script source is saved as [`docs/scripts/frankenphp_dev_install_sh.txt`](../../scripts/frankenphp_dev_install_sh.txt).
+The full script source is saved as [`docs/scripts/frankenphp_dev_install_sh.txt`](../docs/scripts/frankenphp_dev_install_sh.txt).
