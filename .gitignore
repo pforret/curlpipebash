@@ -1,5 +1,6 @@
-.env
-.idea
-.claude/settings.local.json
-.DS_Store
 */.DS_Store
+.DS_Store
+.env
+/.claude/settings.local.json
+/.idea
+/hooks/__pycache__
