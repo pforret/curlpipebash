@@ -36,18 +36,18 @@ This site exists to make that trust more informed. By presenting the full source
 
 The site currently includes installation scripts from projects such as:
 
-| Project | URL | What it installs |
-|---------|-----|-----------------|
-| **Docker** | `get.docker.com` | Docker Engine |
-| **Homebrew** | `brew.sh` | macOS package manager |
-| **nvm** | `nvm-sh/nvm` | Node Version Manager |
-| **Laravel** | `laravel.build` | Docker-based Laravel app |
-| **FrankenPHP** | `frankenphp.dev` | FrankenPHP server |
-| **basher** | `basherpm/basher` | Bash package manager |
-| **PHP/Composer/Laravel** | `php.new` | PHP, Composer and Laravel |
-| **Google Cloud SDK** | `sdk.cloud.google.com` | Google Cloud CLI tools |
+| Project                  | URL                    | What it installs          |
+|--------------------------|------------------------|---------------------------|
+| **Docker**               | `get.docker.com`       | Docker Engine             |
+| **Homebrew**             | `brew.sh`              | macOS package manager     |
+| **nvm**                  | `nvm-sh/nvm`           | Node Version Manager      |
+| **Laravel**              | `laravel.build`        | Docker-based Laravel app  |
+| **FrankenPHP**           | `frankenphp.dev`       | FrankenPHP server         |
+| **basher**               | `basherpm/basher`      | Bash package manager      |
+| **PHP/Composer/Laravel** | `php.new`              | PHP, Composer and Laravel |
+| **Google Cloud SDK**     | `sdk.cloud.google.com` | Google Cloud CLI tools    |
 
-New scripts are added regularly -- check the [blog](/blog/) for the latest additions.
+New scripts are added regularly -- check the [blog](../blog/index.md) for the latest additions.
 
 ## How it's built
 
