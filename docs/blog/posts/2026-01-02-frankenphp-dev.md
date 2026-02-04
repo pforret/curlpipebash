@@ -3,7 +3,7 @@ title: "frankenphp.dev/install.sh"
 categories:
   - script
   - frankenphp.dev
-date: 2026-01-30
+date: 2026-01-02
 ---
 
 The FrankenPHP installer is a 154-line POSIX shell script that installs the FrankenPHP application server — a modern PHP app server built on Caddy — via `curl -sL https://frankenphp.dev/install.sh | bash`. It takes three different installation paths depending on what it finds: on Linux with dnf, it adds an RPM repository from `rpm.henderkes.com` and installs a native package with systemd integration; on Linux with apt, it does the equivalent via a DEB repository at `deb.henderkes.com`; and on all other systems (macOS, or Linux without apt/dnf), it downloads a static binary from GitHub releases directly into the current directory. The script uses `tput` for terminal formatting instead of raw ANSI codes, and on Linux it applies `setcap cap_net_bind_service` to let the binary bind ports 80/443 without root.

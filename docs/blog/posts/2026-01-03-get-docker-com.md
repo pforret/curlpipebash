@@ -3,7 +3,7 @@ title: "get.docker.com"
 categories:
   - script
   - get.docker.com
-date: 2026-01-30
+date: 2026-01-03
 ---
 
 The Docker convenience install script at `get.docker.com` is a substantial 764-line shell script that configures Docker's official package repositories and installs Docker Engine, CLI, containerd, Compose, Buildx, rootless extras, and (as of v28.2) the Docker Model plugin on Linux systems via `curl -fsSL https://get.docker.com | bash`. It supports Debian/Ubuntu/Raspbian (apt), CentOS/Fedora/RHEL (dnf/yum), handles architecture detection, version pinning, channel selection (stable/test), and China mirror support (Aliyun, Azure). The entire script body is wrapped in a `do_install()` function as protection against partial downloads during pipe execution — a classic defensive pattern. Roughly 150 lines are comments, including a 97-line header that doubles as thorough usage documentation.
