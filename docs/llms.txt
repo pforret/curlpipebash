@@ -1,0 +1,19 @@
+# curlpipebash.com
+
+> Documentation and analysis of "curl | bash" installation scripts
+
+This site catalogs popular curl|bash installers (Docker, Homebrew, Laravel, nvm, etc.) with:
+- Security analysis and best practices
+- Code statistics (lines, comments, complexity)
+- Detailed breakdowns of what each script modifies
+
+## Sections
+- /about/ - About the project
+- /best-practices/ - Security guidelines for curl|bash
+- /blog/ - Analysis posts for specific scripts (Docker, Homebrew, Basher, PHP, OpenClaw)
+
+## Key Topics
+- curl|bash security risks and mitigations
+- Script analysis methodology
+- Package manager installation scripts
+- Container runtime installers

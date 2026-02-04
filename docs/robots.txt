@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pforret.github.io/curlpipebash/sitemap.xml
