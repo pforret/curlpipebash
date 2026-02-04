@@ -16,7 +16,7 @@
         <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="category/analysis/">
+        <link rel="next" href="category/claudeai/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
@@ -582,29 +582,6 @@
   
   
     <li class="md-nav__item">
-      <a href="category/analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
       <a href="category/claudeai/" class="md-nav__link">
         
   
@@ -679,6 +656,29 @@
   
   <span class="md-ellipsis">
     laravel.build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="category/openclawai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openclaw.ai
   </span>
   
 
@@ -821,7 +821,8 @@
           <li class="md-meta__item">
             in
             
-              <a href="category/analysis/" class="md-meta__link">Analysis</a></li>
+              <a href="category/openclawai/" class="md-meta__link">openclaw.ai</a>, 
+              <a href="category/script/" class="md-meta__link">script</a></li>
         
         
           
@@ -836,12 +837,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="script-openclawai"><a class="toclink" href="2026/01/script-openclawai/">Script: openclaw.ai</a></h2>
+    <h2 id="script-openclawai"><a class="toclink" href="2026/01/openclaw/">Script: openclaw.ai</a></h2>
 <p>The OpenClaw installer at <code>openclaw.ai/install.sh</code> sets up the OpenClaw CLI tool on macOS and Linux (including WSL). Invoked via <code>curl -fsSL --proto '=https' --tlsv1.2 https://openclaw.ai/install.sh | bash</code>, it installs prerequisites (Homebrew, Node.js 22, Git), then installs OpenClaw either globally via npm or from a git checkout. The script is notably large — roughly a quarter of its 1416 lines are tagline jokes and color formatting.</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/script-openclawai/">
+        <a href="2026/01/openclaw/">
           Continue reading
         </a>
       </nav>
@@ -855,7 +856,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">Jan 30, 2026</time></li>
+          <time datetime="2026-01-28 00:00:00+00:00">Jan 28, 2026</time></li>
         
           <li class="md-meta__item">
             in
@@ -876,12 +877,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="claudeaiinstallsh"><a class="toclink" href="2026/01/claudeaiinstallsh/">claude.ai/install.sh</a></h2>
+    <h2 id="claudeaiinstallsh"><a class="toclink" href="2026/01/claude-code/">claude.ai/install.sh</a></h2>
 <p>The Claude Code installer is a compact 149-line bootstrap script invoked via <code>curl -fsSL https://claude.ai/install.sh | bash</code>. It downloads a platform-specific <code>claude</code> binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to <code>claude install</code> — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when <code>jq</code> is not available, and detects musl libc on Linux to select the correct binary variant.</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/claudeaiinstallsh/">
+        <a href="2026/01/claude-code/">
           Continue reading
         </a>
       </nav>
@@ -895,87 +896,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">Jan 30, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/script/" class="md-meta__link">script</a>, 
-              <a href="category/laravelbuild/" class="md-meta__link">laravel.build</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="laravelbuildexample-app"><a class="toclink" href="2026/01/laravelbuildexample-app/">laravel.build/example-app</a></h2>
-<p>The <code>laravel.build</code> installer is a compact 52-line script generated server-side by Laravel's build service, invoked via <code>curl -sL https://laravel.build/example-app | bash</code>. The URL path (<code>example-app</code>) determines the project name, and query parameters can customize which services are included. The script requires Docker to be running, pulls the <code>laravelsail/php84-composer:latest</code> image, runs <code>laravel new</code> and <code>sail:install</code> inside a container, then uses Laravel Sail to pull and build Docker images for mysql, redis, meilisearch, mailpit, and selenium. No software is installed on the host beyond the project directory — everything runs in Docker. Notably, the script has no shebang line and supports <code>doas</code> as a sudo alternative alongside the usual <code>sudo</code>.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/01/laravelbuildexample-app/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">Jan 30, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/script/" class="md-meta__link">script</a>, 
-              <a href="category/rawgithubusercontentcom/" class="md-meta__link">raw.githubusercontent.com</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="rawgithubusercontentcomnvm-shnvmv0401installsh"><a class="toclink" href="2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</a></h2>
-<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">Jan 30, 2026</time></li>
+          <time datetime="2026-01-13 00:00:00+00:00">Jan 13, 2026</time></li>
         
           <li class="md-meta__item">
             in
@@ -996,12 +917,92 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="sdkcloudgooglecom"><a class="toclink" href="2026/01/sdkcloudgooglecom/">sdk.cloud.google.com</a></h2>
+    <h2 id="sdkcloudgooglecom"><a class="toclink" href="2026/01/google-cloud-sdk/">sdk.cloud.google.com</a></h2>
 <p>The Google Cloud SDK installer uses a two-stage bootstrap: a 17-line stub at <code>sdk.cloud.google.com</code> (invoked via <code>curl -sL https://sdk.cloud.google.com | bash</code>) downloads and executes the real 218-line installer from <code>dl.google.com</code>, which in turn downloads a <code>google-cloud-sdk.tar.gz</code> tarball and runs the bundled <code>install.sh</code> from inside it — three layers deep. The stage 2 script is interactive: it prompts for an installation directory and handles TTY redirection so that prompts work even when the script is piped through bash. It supports both <code>curl</code> and <code>wget</code> for downloads, accepts <code>--disable-prompts</code> and <code>--install-dir</code> flags, and can be configured entirely through environment variables (<code>CLOUDSDK_CORE_DISABLE_PROMPTS</code>, <code>CLOUDSDK_INSTALL_DIR</code>).</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/sdkcloudgooglecom/">
+        <a href="2026/01/google-cloud-sdk/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-01-12 00:00:00+00:00">Jan 12, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/script/" class="md-meta__link">script</a>, 
+              <a href="category/rawgithubusercontentcom/" class="md-meta__link">raw.githubusercontent.com</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="rawgithubusercontentcomnvm-shnvmv0401installsh"><a class="toclink" href="2026/01/nvm/">raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</a></h2>
+<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/01/nvm/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-01-10 00:00:00+00:00">Jan 10, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/script/" class="md-meta__link">script</a>, 
+              <a href="category/laravelbuild/" class="md-meta__link">laravel.build</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="laravelbuildexample-app"><a class="toclink" href="2026/01/laravel/">laravel.build/example-app</a></h2>
+<p>The <code>laravel.build</code> installer is a compact 52-line script generated server-side by Laravel's build service, invoked via <code>curl -sL https://laravel.build/example-app | bash</code>. The URL path (<code>example-app</code>) determines the project name, and query parameters can customize which services are included. The script requires Docker to be running, pulls the <code>laravelsail/php84-composer:latest</code> image, runs <code>laravel new</code> and <code>sail:install</code> inside a container, then uses Laravel Sail to pull and build Docker images for mysql, redis, meilisearch, mailpit, and selenium. No software is installed on the host beyond the project directory — everything runs in Docker. Notably, the script has no shebang line and supports <code>doas</code> as a sudo alternative alongside the usual <code>sudo</code>.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/01/laravel/">
           Continue reading
         </a>
       </nav>
@@ -1036,12 +1037,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="phpnewinstallmac"><a class="toclink" href="2026/01/phpnewinstallmac/">php.new/install/mac</a></h2>
+    <h2 id="phpnewinstallmac"><a class="toclink" href="2026/01/phpnew/">php.new/install/mac</a></h2>
 <p>The <code>php.new</code> macOS installer is a compact 212-line script that sets up a ready-to-go PHP development environment via <code>curl -sL https://php.new/install/mac | bash</code>. It downloads pre-built binaries for PHP 8.5, Composer, and the Laravel installer from <code>download.herdphp.com</code> — the infrastructure behind Laravel Herd — and drops them into <code>~/.config/herd-lite/bin/</code>. It also fetches the Mozilla CA certificate bundle from <code>curl.se</code>, creates a minimal <code>php.ini</code>, wires <code>PATH</code> and <code>PHP_INI_SCAN_DIR</code> into your shell profile, and generates its own uninstall script. The whole thing is essentially "Herd Lite": a standalone subset of Laravel Herd that skips the GUI and gives you three executables and a config directory.</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/phpnewinstallmac/">
+        <a href="2026/01/phpnew/">
           Continue reading
         </a>
       </nav>
@@ -1076,12 +1077,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="getdockercom"><a class="toclink" href="2026/01/getdockercom/">get.docker.com</a></h2>
+    <h2 id="getdockercom"><a class="toclink" href="2026/01/docker/">get.docker.com</a></h2>
 <p>The Docker convenience install script at <code>get.docker.com</code> is a substantial 764-line shell script that configures Docker's official package repositories and installs Docker Engine, CLI, containerd, Compose, Buildx, rootless extras, and (as of v28.2) the Docker Model plugin on Linux systems via <code>curl -fsSL https://get.docker.com | bash</code>. It supports Debian/Ubuntu/Raspbian (apt), CentOS/Fedora/RHEL (dnf/yum), handles architecture detection, version pinning, channel selection (stable/test), and China mirror support (Aliyun, Azure). The entire script body is wrapped in a <code>do_install()</code> function as protection against partial downloads during pipe execution — a classic defensive pattern. Roughly 150 lines are comments, including a 97-line header that doubles as thorough usage documentation.</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/getdockercom/">
+        <a href="2026/01/docker/">
           Continue reading
         </a>
       </nav>
@@ -1116,12 +1117,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="frankenphpdevinstallsh"><a class="toclink" href="2026/01/frankenphpdevinstallsh/">frankenphp.dev/install.sh</a></h2>
+    <h2 id="frankenphpdevinstallsh"><a class="toclink" href="2026/01/frankenphp/">frankenphp.dev/install.sh</a></h2>
 <p>The FrankenPHP installer is a 154-line POSIX shell script that installs the FrankenPHP application server — a modern PHP app server built on Caddy — via <code>curl -sL https://frankenphp.dev/install.sh | bash</code>. It takes three different installation paths depending on what it finds: on Linux with dnf, it adds an RPM repository from <code>rpm.henderkes.com</code> and installs a native package with systemd integration; on Linux with apt, it does the equivalent via a DEB repository at <code>deb.henderkes.com</code>; and on all other systems (macOS, or Linux without apt/dnf), it downloads a static binary from GitHub releases directly into the current directory. The script uses <code>tput</code> for terminal formatting instead of raw ANSI codes, and on Linux it applies <code>setcap cap_net_bind_service</code> to let the binary bind ports 80/443 without root.</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/frankenphpdevinstallsh/">
+        <a href="2026/01/frankenphp/">
           Continue reading
         </a>
       </nav>
@@ -1156,12 +1157,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="bashermasterinstallsh"><a class="toclink" href="2026/01/bashermasterinstallsh/">basher/master/install.sh</a></h2>
+    <h2 id="bashermasterinstallsh"><a class="toclink" href="2026/01/basher/">basher/master/install.sh</a></h2>
 <p>The basher installer is a minimal 61-line bash script that installs <a href="https://github.com/basherpm/basher">basher</a>, a package manager for shell scripts, via <code>curl -sL https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</code>. It git-clones the basher repository into <code>~/.basher</code> and appends initialization lines to the user's shell profile. Zero boilerplate — no colors, no banners, no spinners. Every line appended to the shell profile is tagged with the marker <code>##basher5ea843</code>, making it trivial to grep and remove them on uninstall. The script supports bash, zsh, sh, and fish, with fish getting its own 5-line initialization block.</p>
 
     
       <nav class="md-post__action">
-        <a href="2026/01/bashermasterinstallsh/">
+        <a href="2026/01/basher/">
           Continue reading
         </a>
       </nav>

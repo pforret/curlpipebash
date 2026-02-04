@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/sdkcloudgooglecom/">
+        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/frankenphp/">
       
       
-        <link rel="prev" href="../phpnewinstallmac/">
+        <link rel="prev" href="../basher/">
       
       
-        <link rel="next" href="../rawgithubusercontentcomnvm-shnvmv0401installsh/">
+        <link rel="next" href="../docker/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
@@ -27,7 +27,7 @@
     
     
       
-        <title>sdk.cloud.google.com - curl | bash</title>
+        <title>frankenphp.dev/install.sh - curl | bash</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              sdk.cloud.google.com
+              frankenphp.dev/install.sh
             
           </span>
         </div>
@@ -574,29 +574,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../category/analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
       <a href="../../../category/claudeai/" class="md-nav__link">
         
   
@@ -671,6 +648,29 @@
   
   <span class="md-ellipsis">
     laravel.build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category/openclawai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openclaw.ai
   </span>
   
 
@@ -824,7 +824,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-01-30 00:00:00+00:00" class="md-ellipsis">Jan 30, 2026</time>
+                        <time datetime="2026-01-02 00:00:00+00:00" class="md-ellipsis">Jan 2, 2026</time>
                       </div>
                     </li>
                     
@@ -836,7 +836,7 @@
                             in
                             
                               <a href="../../../category/script/">script</a>, 
-                              <a href="../../../category/sdkcloudgooglecom/">sdk.cloud.google.com</a></span>
+                              <a href="../../../category/frankenphpdev/">frankenphp.dev</a></span>
                         </div>
                       </li>
                     
@@ -901,18 +901,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
+  <a href="#packages-installed" class="md-nav__link">
     <span class="md-ellipsis">
-      Downloads
+      Packages installed
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#environment-changes" class="md-nav__link">
+  <a href="#downloads" class="md-nav__link">
     <span class="md-ellipsis">
-      Environment changes
+      Downloads
     </span>
   </a>
   
@@ -962,13 +962,12 @@
         
 
 
-  <h1>sdk.cloud.google.com</h1>
+  <h1>frankenphp.dev/install.sh</h1>
 
-<p>The Google Cloud SDK installer uses a two-stage bootstrap: a 17-line stub at <code>sdk.cloud.google.com</code> (invoked via <code>curl -sL https://sdk.cloud.google.com | bash</code>) downloads and executes the real 218-line installer from <code>dl.google.com</code>, which in turn downloads a <code>google-cloud-sdk.tar.gz</code> tarball and runs the bundled <code>install.sh</code> from inside it — three layers deep. The stage 2 script is interactive: it prompts for an installation directory and handles TTY redirection so that prompts work even when the script is piped through bash. It supports both <code>curl</code> and <code>wget</code> for downloads, accepts <code>--disable-prompts</code> and <code>--install-dir</code> flags, and can be configured entirely through environment variables (<code>CLOUDSDK_CORE_DISABLE_PROMPTS</code>, <code>CLOUDSDK_INSTALL_DIR</code>).</p>
+<p>The FrankenPHP installer is a 154-line POSIX shell script that installs the FrankenPHP application server — a modern PHP app server built on Caddy — via <code>curl -sL https://frankenphp.dev/install.sh | bash</code>. It takes three different installation paths depending on what it finds: on Linux with dnf, it adds an RPM repository from <code>rpm.henderkes.com</code> and installs a native package with systemd integration; on Linux with apt, it does the equivalent via a DEB repository at <code>deb.henderkes.com</code>; and on all other systems (macOS, or Linux without apt/dnf), it downloads a static binary from GitHub releases directly into the current directory. The script uses <code>tput</code> for terminal formatting instead of raw ANSI codes, and on Linux it applies <code>setcap cap_net_bind_service</code> to let the binary bind ports 80/443 without root.</p>
 <!-- more -->
 
 <h2 id="script-info">Script info<a class="headerlink" href="#script-info" title="Permanent link">&para;</a></h2>
-<p><strong>Stage 1 — bootstrap stub</strong> (<code>sdk.cloud.google.com</code>):</p>
 <table>
 <thead>
 <tr>
@@ -979,114 +978,112 @@
 <tbody>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>https://sdk.cloud.google.com</code></td>
+<td><code>https://frankenphp.dev/install.sh</code></td>
 </tr>
 <tr>
 <td><strong>Invocation</strong></td>
-<td><code>curl -sL https://sdk.cloud.google.com \| bash</code></td>
+<td><code>curl -sL https://frankenphp.dev/install.sh \| bash</code></td>
 </tr>
 <tr>
 <td><strong>Total lines</strong></td>
-<td>17</td>
+<td>154</td>
 </tr>
 <tr>
 <td><strong>Comments</strong></td>
-<td>0 lines</td>
+<td>3 lines</td>
 </tr>
 <tr>
 <td><strong>Blank</strong></td>
-<td>5 lines</td>
+<td>19 lines</td>
 </tr>
 <tr>
 <td><strong>Boilerplate</strong></td>
-<td>0 lines</td>
+<td>9 lines (tput formatting variables, empty echo lines)</td>
 </tr>
 <tr>
 <td><strong>Installation</strong></td>
-<td>11 lines</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Stage 2 — actual installer</strong> (<code>dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash</code>):</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>URL</strong></td>
-<td><code>https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash</code></td>
-</tr>
-<tr>
-<td><strong>Total lines</strong></td>
-<td>218</td>
-</tr>
-<tr>
-<td><strong>Comments</strong></td>
-<td>21 lines</td>
-</tr>
-<tr>
-<td><strong>Blank</strong></td>
-<td>21 lines</td>
-</tr>
-<tr>
-<td><strong>Boilerplate</strong></td>
-<td>21 lines (usage text, echo formatting)</td>
-</tr>
-<tr>
-<td><strong>Installation</strong></td>
-<td>154 lines (actual work)</td>
+<td>122 lines (actual work)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="what-does-it-change">What does it change?<a class="headerlink" href="#what-does-it-change" title="Permanent link">&para;</a></h2>
 <h3 id="files-and-folders">Files and folders<a class="headerlink" href="#files-and-folders" title="Permanent link">&para;</a></h3>
+<p><strong>Via package manager (Linux with dnf or apt):</strong></p>
 <ul>
-<li>Creates <code>$HOME/google-cloud-sdk/</code> (or <code>$CLOUDSDK_INSTALL_DIR/google-cloud-sdk/</code> if specified) by extracting the tarball with <code>tar -zxvf</code></li>
-<li>If the destination directory already exists, the script prompts to remove it (or aborts in non-interactive mode)</li>
-<li>After extraction, runs <code>google-cloud-sdk/install.sh</code> — the bundled installer, which handles shell completion, PATH setup, and component installation</li>
-<li>Stage 1 creates a temporary directory via <code>mktemp -d</code> for the download; stage 2 also creates one, both cleaned up via <code>trap</code> on exit</li>
+<li>Installs the <code>frankenphp</code> binary to <code>/usr/bin/frankenphp</code></li>
+<li>Installs a systemd service that reads <code>/etc/frankenphp/Caddyfile</code></li>
+<li>PHP configuration at <code>/etc/php-zts/php.ini</code></li>
+</ul>
+<p><strong>Via dnf:</strong></p>
+<ul>
+<li>Adds the RPM repo package from <code>https://rpm.henderkes.com/static-php-1-0.noarch.rpm</code></li>
+</ul>
+<p><strong>Via apt:</strong></p>
+<ul>
+<li>Downloads GPG signing key to <code>/usr/share/keyrings/static-php.gpg</code></li>
+<li>Creates <code>/etc/apt/sources.list.d/static-php.list</code> pointing to <code>https://deb.henderkes.com/</code></li>
+</ul>
+<p><strong>Via direct download (macOS or Linux without apt/dnf):</strong></p>
+<ul>
+<li>Downloads a single static binary to <code>$BIN_DIR/frankenphp</code>, where <code>$BIN_DIR</code> defaults to the current working directory (<code>$(pwd)</code>)</li>
+<li>Marks the binary executable with <code>chmod +x</code></li>
+<li>On Linux with glibc, downloads the <code>-gnu</code> variant; on musl-based systems, downloads the standard variant</li>
+<li>Suggests moving the binary to <code>/usr/local/bin/</code> if it's not already in <code>$PATH</code></li>
+<li>Reads <code>/etc/frankenphp/php.ini</code> if it exists (no file is created)</li>
+</ul>
+<h3 id="packages-installed">Packages installed<a class="headerlink" href="#packages-installed" title="Permanent link">&para;</a></h3>
+<p><strong>On Linux with dnf (Fedora, RHEL, etc.):</strong></p>
+<ul>
+<li><code>static-php-1-0.noarch.rpm</code> — the repository package from <code>rpm.henderkes.com</code></li>
+<li>Enables the <code>php-zts:static-8.4</code> module stream</li>
+<li><code>frankenphp</code> — the main package</li>
+</ul>
+<p><strong>On Linux with apt (Debian, Ubuntu, etc.):</strong></p>
+<ul>
+<li><code>frankenphp</code> — installed from the <code>deb.henderkes.com</code> repository</li>
 </ul>
 <h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
-<p><strong>Stage 1 downloads stage 2:</strong></p>
 <ul>
-<li><code>https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash</code> — the 218-line interactive installer, saved to a temp directory</li>
+<li><strong>dnf path:</strong> RPM repo package from <code>https://rpm.henderkes.com/static-php-1-0.noarch.rpm</code></li>
+<li><strong>apt path:</strong> GPG key from <code>https://key.henderkes.com/static-php.gpg</code></li>
+<li><strong>Direct download:</strong> Binary from <code>https://github.com/php/frankenphp/releases/latest/download/</code> — one of six variants:<ul>
+<li><code>frankenphp-linux-x86_64-gnu</code> (Linux x86_64, glibc)</li>
+<li><code>frankenphp-linux-x86_64</code> (Linux x86_64, musl)</li>
+<li><code>frankenphp-linux-aarch64-gnu</code> (Linux ARM64, glibc)</li>
+<li><code>frankenphp-linux-aarch64</code> (Linux ARM64, musl)</li>
+<li><code>frankenphp-mac-arm64</code> (macOS Apple Silicon)</li>
+<li><code>frankenphp-mac-x86_64</code> (macOS Intel)</li>
 </ul>
-<p><strong>Stage 2 downloads the SDK tarball:</strong></p>
-<ul>
-<li><code>https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz</code> — the full Google Cloud SDK</li>
-<li>Uses <code>curl</code> if available, falls back to <code>wget</code></li>
+</li>
 </ul>
-<h3 id="environment-changes">Environment changes<a class="headerlink" href="#environment-changes" title="Permanent link">&para;</a></h3>
-<p>The stage 2 script itself does not modify environment files — it delegates to the bundled <code>install.sh</code> inside the extracted tarball, which:</p>
-<ul>
-<li>Adds <code>google-cloud-sdk/bin</code> to <code>PATH</code> in your shell profile</li>
-<li>Sets up shell completion for <code>gcloud</code>, <code>gsutil</code>, and <code>bq</code></li>
-<li>Modifies <code>~/.bashrc</code>, <code>~/.zshrc</code>, or <code>~/.config/fish/config.fish</code> depending on the detected shell</li>
-</ul>
-<p>The stage 2 script handles TTY detection: when piped via <code>curl | bash</code>, it redirects stdin from <code>/dev/tty</code> so interactive prompts still work. If no TTY is available, it sets <code>CLOUDSDK_CORE_DISABLE_PROMPTS=1</code> and runs non-interactively.</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <ul>
-<li>No <code>sudo</code> is used — everything installs into the user's home directory</li>
-<li>Stage 1 sets <code>chmod 775</code> on the downloaded stage 2 script</li>
+<li>Uses <code>sudo</code> when not running as root (detected via <code>id -u</code>)</li>
+<li>For the direct download path, does a writability check on <code>$DEST</code> via <code>touch</code> — if it fails, escalates to sudo for the download destination</li>
+<li>On Linux, applies <code>setcap 'cap_net_bind_service=+ep'</code> to the binary if <code>setcap</code> is available, allowing the binary to bind to ports 80 and 443 without running as root</li>
 </ul>
 <h2 id="uninstall">Uninstall<a class="headerlink" href="#uninstall" title="Permanent link">&para;</a></h2>
-<p>Remove the SDK directory:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/google-cloud-sdk
+<p><strong>If installed via package manager:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># dnf</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>remove<span class="w"> </span>frankenphp
+
+<span class="c1"># apt</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>frankenphp
+sudo<span class="w"> </span>rm<span class="w"> </span>/etc/apt/sources.list.d/static-php.list
+sudo<span class="w"> </span>rm<span class="w"> </span>/usr/share/keyrings/static-php.gpg
 </code></pre></div>
-<p>Remove the shell profile lines. The bundled installer adds sourcing lines for <code>path.bash.inc</code> and <code>completion.bash.inc</code> (or the zsh/fish equivalents). Check and remove from your profile:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Look for lines referencing google-cloud-sdk in your profile</span>
-grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;google-cloud-sdk&quot;</span><span class="w"> </span>~/.bashrc<span class="w"> </span>~/.zshrc<span class="w"> </span>~/.profile<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-<span class="c1"># Edit the file(s) to remove those lines</span>
+<p><strong>If installed via direct download:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove the binary (wherever BIN_DIR pointed, default is where you ran the script)</span>
+rm<span class="w"> </span>./frankenphp
+
+<span class="c1"># Or if you moved it:</span>
+sudo<span class="w"> </span>rm<span class="w"> </span>/usr/local/bin/frankenphp
 </code></pre></div>
-<p>Optionally remove cached configuration:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/.config/gcloud
+<p>Remove the optional configuration directory if created:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/etc/frankenphp
 </code></pre></div>
 <h2 id="full-source">Full source<a class="headerlink" href="#full-source" title="Permanent link">&para;</a></h2>
-<p>The full script source is saved as <a href="../../../../scripts/sdk_cloud_google_com.txt"><code>docs/scripts/sdk_cloud_google_com.txt</code></a>.</p>
+<p>The full script source is saved as <a href="../../../../scripts/frankenphp_dev_install_sh.txt"><code>docs/scripts/frankenphp_dev_install_sh.txt</code></a>.</p>
 
 
 

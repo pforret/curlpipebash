@@ -1,10 +1,10 @@
 ---
 title: "sdk.cloud.google.com"
-slug: sdkcloudgooglecom
+slug: google-cloud-sdk
 categories:
   - script
   - sdk.cloud.google.com
-date: 2026-01-30
+date: 2026-01-13
 ---
 
 The Google Cloud SDK installer uses a two-stage bootstrap: a 17-line stub at `sdk.cloud.google.com` (invoked via `curl -sL https://sdk.cloud.google.com | bash`) downloads and executes the real 218-line installer from `dl.google.com`, which in turn downloads a `google-cloud-sdk.tar.gz` tarball and runs the bundled `install.sh` from inside it — three layers deep. The stage 2 script is interactive: it prompts for an installation directory and handles TTY redirection so that prompts work even when the script is piped through bash. It supports both `curl` and `wget` for downloads, accepts `--disable-prompts` and `--install-dir` flags, and can be configured entirely through environment variables (`CLOUDSDK_CORE_DISABLE_PROMPTS`, `CLOUDSDK_INSTALL_DIR`).

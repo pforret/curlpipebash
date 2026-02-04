@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://curlpipebash.com/blog/category/claudeai/">
       
       
-        <link rel="prev" href="../analysis/">
+        <link rel="prev" href="../../">
       
       
         <link rel="next" href="../frankenphpdev/">
@@ -567,29 +567,6 @@
                 
   
   
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -681,6 +658,29 @@
   
   <span class="md-ellipsis">
     laravel.build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../openclawai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openclaw.ai
   </span>
   
 
@@ -818,7 +818,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">Jan 30, 2026</time></li>
+          <time datetime="2026-01-28 00:00:00+00:00">Jan 28, 2026</time></li>
         
           <li class="md-meta__item">
             in
@@ -839,12 +839,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="claudeaiinstallsh"><a class="toclink" href="../../2026/01/claudeaiinstallsh/">claude.ai/install.sh</a></h2>
+    <h2 id="claudeaiinstallsh"><a class="toclink" href="../../2026/01/claude-code/">claude.ai/install.sh</a></h2>
 <p>The Claude Code installer is a compact 149-line bootstrap script invoked via <code>curl -fsSL https://claude.ai/install.sh | bash</code>. It downloads a platform-specific <code>claude</code> binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to <code>claude install</code> — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when <code>jq</code> is not available, and detects musl libc on Linux to select the correct binary variant.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/01/claudeaiinstallsh/">
+        <a href="../../2026/01/claude-code/">
           Continue reading
         </a>
       </nav>

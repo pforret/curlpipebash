@@ -1,10 +1,10 @@
 ---
 title: "raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh"
-slug: rawgithubusercontentcomnvmshnvmv0401installsh
+slug: nvm
 categories:
   - script
   - raw.githubusercontent.com
-date: 2026-01-30
+date: 2026-01-12
 ---
 
 The nvm (Node Version Manager) installer is a 495-line shell script invoked via `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash`. It installs nvm by either cloning the `nvm-sh/nvm` Git repository (preferred) or downloading three individual files (`nvm.sh`, `nvm-exec`, `bash_completion`) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in `{ ... }` braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the `NVM_DIR` export and sourcing lines, and optionally installs a Node.js version if `$NODE_VERSION` is set.

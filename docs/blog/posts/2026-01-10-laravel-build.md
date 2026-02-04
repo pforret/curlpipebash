@@ -1,10 +1,10 @@
 ---
 title: "laravel.build/example-app"
-slug: laravelbuildexample-app
+slug: laravel
 categories:
   - script
   - laravel.build
-date: 2026-01-30
+date: 2026-01-10
 ---
 
 The `laravel.build` installer is a compact 52-line script generated server-side by Laravel's build service, invoked via `curl -sL https://laravel.build/example-app | bash`. The URL path (`example-app`) determines the project name, and query parameters can customize which services are included. The script requires Docker to be running, pulls the `laravelsail/php84-composer:latest` image, runs `laravel new` and `sail:install` inside a container, then uses Laravel Sail to pull and build Docker images for mysql, redis, meilisearch, mailpit, and selenium. No software is installed on the host beyond the project directory — everything runs in Docker. Notably, the script has no shebang line and supports `doas` as a sudo alternative alongside the usual `sudo`.

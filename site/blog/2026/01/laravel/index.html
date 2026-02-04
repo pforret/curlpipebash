@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/claudeaiinstallsh/">
+        <link rel="canonical" href="https://curlpipebash.com/blog/2026/01/laravel/">
       
       
-        <link rel="prev" href="../laravelbuildexample-app/">
+        <link rel="prev" href="../phpnew/">
       
       
-        <link rel="next" href="../script-openclawai/">
+        <link rel="next" href="../nvm/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
@@ -27,7 +27,7 @@
     
     
       
-        <title>claude.ai/install.sh - curl | bash</title>
+        <title>laravel.build/example-app - curl | bash</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              claude.ai/install.sh
+              laravel.build/example-app
             
           </span>
         </div>
@@ -574,29 +574,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../category/analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
       <a href="../../../category/claudeai/" class="md-nav__link">
         
   
@@ -671,6 +648,29 @@
   
   <span class="md-ellipsis">
     laravel.build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category/openclawai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openclaw.ai
   </span>
   
 
@@ -824,7 +824,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-01-30 00:00:00+00:00" class="md-ellipsis">Jan 30, 2026</time>
+                        <time datetime="2026-01-10 00:00:00+00:00" class="md-ellipsis">Jan 10, 2026</time>
                       </div>
                     </li>
                     
@@ -836,7 +836,7 @@
                             in
                             
                               <a href="../../../category/script/">script</a>, 
-                              <a href="../../../category/claudeai/">claude.ai</a></span>
+                              <a href="../../../category/laravelbuild/">laravel.build</a></span>
                         </div>
                       </li>
                     
@@ -910,6 +910,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#permissions" class="md-nav__link">
     <span class="md-ellipsis">
       Permissions
@@ -953,9 +962,9 @@
         
 
 
-  <h1>claude.ai/install.sh</h1>
+  <h1>laravel.build/example-app</h1>
 
-<p>The Claude Code installer is a compact 149-line bootstrap script invoked via <code>curl -fsSL https://claude.ai/install.sh | bash</code>. It downloads a platform-specific <code>claude</code> binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to <code>claude install</code> — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when <code>jq</code> is not available, and detects musl libc on Linux to select the correct binary variant.</p>
+<p>The <code>laravel.build</code> installer is a compact 52-line script generated server-side by Laravel's build service, invoked via <code>curl -sL https://laravel.build/example-app | bash</code>. The URL path (<code>example-app</code>) determines the project name, and query parameters can customize which services are included. The script requires Docker to be running, pulls the <code>laravelsail/php84-composer:latest</code> image, runs <code>laravel new</code> and <code>sail:install</code> inside a container, then uses Laravel Sail to pull and build Docker images for mysql, redis, meilisearch, mailpit, and selenium. No software is installed on the host beyond the project directory — everything runs in Docker. Notably, the script has no shebang line and supports <code>doas</code> as a sudo alternative alongside the usual <code>sudo</code>.</p>
 <!-- more -->
 
 <h2 id="script-info">Script info<a class="headerlink" href="#script-info" title="Permanent link">&para;</a></h2>
@@ -969,62 +978,74 @@
 <tbody>
 <tr>
 <td><strong>URL</strong></td>
-<td><code>https://claude.ai/install.sh</code></td>
+<td><code>https://laravel.build/example-app</code></td>
 </tr>
 <tr>
 <td><strong>Invocation</strong></td>
-<td><code>curl -fsSL https://claude.ai/install.sh \| bash</code></td>
+<td><code>curl -sL https://laravel.build/example-app \| bash</code></td>
 </tr>
 <tr>
 <td><strong>Total lines</strong></td>
-<td>149</td>
+<td>52</td>
 </tr>
 <tr>
 <td><strong>Comments</strong></td>
-<td>18 lines</td>
+<td>2 lines</td>
 </tr>
 <tr>
 <td><strong>Blank</strong></td>
-<td>26 lines</td>
+<td>9 lines</td>
 </tr>
 <tr>
 <td><strong>Boilerplate</strong></td>
-<td>2 lines (output formatting)</td>
+<td>10 lines (color variables, formatted echo output)</td>
 </tr>
 <tr>
 <td><strong>Installation</strong></td>
-<td>102 lines (actual work)</td>
+<td>31 lines (actual work)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="what-does-it-change">What does it change?<a class="headerlink" href="#what-does-it-change" title="Permanent link">&para;</a></h2>
 <h3 id="files-and-folders">Files and folders<a class="headerlink" href="#files-and-folders" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Creates <code>~/.claude/downloads/</code> for the temporary binary download</li>
-<li>Downloads the <code>claude</code> binary to <code>~/.claude/downloads/claude-&lt;version&gt;-&lt;platform&gt;</code> — this file is deleted after installation completes</li>
-<li>The real persistent installation (launcher binary, shell integration) is performed by <code>claude install</code>, which the script invokes on the downloaded binary at line 142. The bootstrap script itself leaves no permanent files behind.</li>
+<li>Creates an <code>example-app/</code> directory in the current working directory, containing a full Laravel project with Sail configuration</li>
+<li>The project is scaffolded inside a Docker container (<code>laravelsail/php84-composer:latest</code>) with the current directory bind-mounted to <code>/opt</code>, so the files end up on the host</li>
+<li>Runs <code>chown -R $USER:</code> on the project directory to transfer ownership from root (Docker) to the current user</li>
 </ul>
 <h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Fetches the latest version string from <code>https://storage.googleapis.com/claude-code-dist-.../claude-code-releases/latest</code></li>
-<li>Fetches <code>manifest.json</code> for the resolved version, which contains per-platform SHA-256 checksums</li>
-<li>Downloads the platform-specific <code>claude</code> binary from the same GCS bucket</li>
-<li>All downloads use <code>curl</code> (preferred) or <code>wget</code> as fallback; the <code>download_file()</code> function wraps both</li>
+<li>Pulls the Docker image <code>laravelsail/php84-composer:latest</code> (with <code>--pull=always</code>, so it always fetches the newest version)</li>
+<li>Inside the container, <code>laravel new</code> downloads the Laravel framework and its Composer dependencies</li>
+<li><code>sail pull</code> downloads Docker images for the configured services: mysql, redis, meilisearch, mailpit, and selenium</li>
+<li><code>sail build</code> builds the application's Docker image</li>
+</ul>
+<p>The service list is server-side templated. The URL <code>https://laravel.build/example-app?with=mysql,redis</code> would generate a script with only mysql and redis. Passing <code>?with=none</code> skips the pull step and only runs <code>sail build</code>.</p>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
+<ul>
+<li>No host-level services are installed or started — all services (MySQL, Redis, Meilisearch, Mailpit, Selenium) run as Docker containers managed by Laravel Sail</li>
+<li>After installation, the user starts everything with <code>./vendor/bin/sail up</code></li>
 </ul>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Sets the downloaded binary as executable (<code>chmod +x</code>) before running <code>claude install</code></li>
+<li>Uses <code>sudo</code> or <code>doas</code> (whichever is available, with <code>doas</code> checked first) to <code>chown -R</code> the project directory to the current user</li>
+<li>If the user's sudo/doas session is already active (<code>-n true</code> succeeds), it runs silently; otherwise it prompts for a password</li>
 </ul>
 <h2 id="uninstall">Uninstall<a class="headerlink" href="#uninstall" title="Permanent link">&para;</a></h2>
-<p>The bootstrap script itself is stateless — it cleans up its download automatically. To remove the installed Claude Code CLI, run:</p>
-<div class="highlight"><pre><span></span><code>claude<span class="w"> </span>uninstall
+<p>Remove the project directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>example-app
+./vendor/bin/sail<span class="w"> </span>down<span class="w"> </span>--rmi<span class="w"> </span>all<span class="w"> </span>--volumes<span class="w">  </span><span class="c1"># stop containers, remove images and volumes</span>
+<span class="nb">cd</span><span class="w"> </span>..
+rm<span class="w"> </span>-rf<span class="w"> </span>example-app
 </code></pre></div>
-<p>If the <code>claude</code> command is no longer available, remove the installation directory manually:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/.claude
+<p>Remove the pulled Docker images if no longer needed:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>rmi<span class="w"> </span>laravelsail/php84-composer:latest
+<span class="c1"># Plus any service images (mysql, redis, meilisearch, etc.)</span>
+docker<span class="w"> </span>image<span class="w"> </span>prune
 </code></pre></div>
-<p>Check your shell profile (<code>.bashrc</code>, <code>.zshrc</code>, etc.) for any sourcing lines added by <code>claude install</code> and remove them.</p>
+<p>No shell profile, PATH, or system configuration changes need to be reversed.</p>
 <h2 id="full-source">Full source<a class="headerlink" href="#full-source" title="Permanent link">&para;</a></h2>
-<p>The full script source is saved as <a href="../../docs/scripts/claude_ai_install_sh.txt"><code>docs/scripts/claude_ai_install_sh.txt</code></a>.</p>
+<p>The full script source is saved as <a href="../../../../scripts/laravel_build_example_app.txt"><code>docs/scripts/laravel_build_example_app.txt</code></a>.</p>
 
 
 

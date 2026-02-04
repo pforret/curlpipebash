@@ -1,6 +1,6 @@
 ---
 title: "get.docker.com"
-slug: getdockercom
+slug: docker
 categories:
   - script
   - get.docker.com
