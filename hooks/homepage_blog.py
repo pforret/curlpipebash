@@ -59,11 +59,23 @@ def on_page_markdown(markdown, page, config, files):
                 elif (images_dir / img_name).exists():
                     image = image_path
 
+        # Extract excerpt (text between front matter and <!-- more -->)
+        body = content[match.end():].strip()
+        excerpt = ""
+        if "<!-- more -->" in body:
+            excerpt_text = body.split("<!-- more -->")[0].strip()
+            # Remove markdown image syntax and clean up
+            excerpt_text = re.sub(r'!\[.*?\]\(.*?\)', '', excerpt_text).strip()
+            # Truncate to ~120 chars
+            if len(excerpt_text) > 120:
+                excerpt_text = excerpt_text[:117].rsplit(' ', 1)[0] + "..."
+            excerpt = excerpt_text
+
         # Build URL from date and slug: blog/{year}/{month}/{slug}/
         year, month, _ = date.split("-")
         url = f"blog/{year}/{month}/{slug}/"
 
-        posts.append({"title": title, "date": date, "url": url, "image": image})
+        posts.append({"title": title, "date": date, "url": url, "image": image, "excerpt": excerpt})
 
     # Sort by date descending, take latest 10
     posts.sort(key=lambda x: x["date"], reverse=True)
@@ -74,14 +86,15 @@ def on_page_markdown(markdown, page, config, files):
 
     # Generate responsive card grid HTML
     cards_html = """<style>
-.post-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
+.post-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
 .post-card { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; background: var(--md-default-bg-color); }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .post-card a { text-decoration: none; color: inherit; display: block; }
-.post-card-img { width: 100%; height: 180px; object-fit: cover; background: var(--md-default-fg-color--lightest); }
+.post-card-img { width: 100%; height: 160px; object-fit: cover; background: var(--md-default-fg-color--lightest); }
 .post-card-body { padding: 1rem; }
-.post-card-title { margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; color: var(--md-default-fg-color); }
-.post-card-date { font-size: 0.85rem; color: var(--md-default-fg-color--light); }
+.post-card-title { margin: 0 0 0.25rem 0; font-size: 1.1rem; font-weight: 600; color: var(--md-default-fg-color); }
+.post-card-excerpt { margin: 0.5rem 0; font-size: 0.9rem; color: var(--md-default-fg-color--light); line-height: 1.4; }
+.post-card-date { font-size: 0.75rem; color: var(--md-default-fg-color--lighter); }
 </style>
 <div class="post-cards">
 """
@@ -92,11 +105,14 @@ def on_page_markdown(markdown, page, config, files):
         else:
             img_html = '<div class="post-card-img"></div>'
 
+        excerpt_html = f'<p class="post-card-excerpt">{post["excerpt"]}</p>' if post.get("excerpt") else ""
+
         cards_html += f"""<div class="post-card">
 <a href="{post['url']}">
 {img_html}
 <div class="post-card-body">
 <h3 class="post-card-title">{post['title']}</h3>
+{excerpt_html}
 <span class="post-card-date">{post['date']}</span>
 </div>
 </a>
