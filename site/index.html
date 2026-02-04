@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Mkdox curlpipebash by pforret">
+        <meta name="description" content="pforret.github.io/curlpipebash/ by pforret">
       
       
       
-        <link rel="canonical" href="https://curlpipebash.com/">
+        <link rel="canonical" href="https://pforret.github.io/curlpipebash/">
       
       
       
@@ -662,29 +662,6 @@
 
               
             
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="blog/archive/2025/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2025
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -740,11 +717,11 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/claudeai/" class="md-nav__link">
+      <a href="blog/category/brewsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    claude.ai
+    brew.sh
   </span>
   
 
@@ -763,11 +740,11 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/frankenphpdev/" class="md-nav__link">
+      <a href="blog/category/github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    frankenphp.dev
+    github
   </span>
   
 
@@ -786,57 +763,11 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/getdockercom/" class="md-nav__link">
+      <a href="blog/category/package-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    get.docker.com
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="blog/category/laravelbuild/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    laravel.build
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="blog/category/openclawai/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    openclaw.ai
+    package-manager
   </span>
   
 
@@ -878,57 +809,11 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/rawgithubusercontentcom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    raw.githubusercontent.com
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
       <a href="blog/category/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     script
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="blog/category/sdkcloudgooglecom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sdk.cloud.google.com
   </span>
   
 
@@ -970,18 +855,45 @@
 
 <h1 id="curl-bash">curl | bash<a class="headerlink" href="#curl-bash" title="Permanent link">&para;</a></h1>
 <h2 id="recent-posts">Recent posts<a class="headerlink" href="#recent-posts" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="blog/2026/02/openclawai/">openclaw.ai</a> (2026-02-04)</li>
-<li><a href="blog/2026/01/claude-code/">claude.ai/install.sh</a> (2026-01-28)</li>
-<li><a href="blog/2026/01/google-cloud-sdk/">sdk.cloud.google.com</a> (2026-01-13)</li>
-<li><a href="blog/2026/01/nvm/">nvm-sh/nvm</a> (2026-01-12)</li>
-<li><a href="blog/2026/01/laravel/">laravel.build/example-app</a> (2026-01-10)</li>
-<li><a href="blog/2026/01/phpnew/">php.new/install/mac</a> (2026-01-04)</li>
-<li><a href="blog/2026/01/docker/">get.docker.com</a> (2026-01-03)</li>
-<li><a href="blog/2026/01/frankenphp/">frankenphp.dev/install.sh</a> (2026-01-02)</li>
-<li><a href="blog/2026/01/basher/">basher/master/install.sh</a> (2026-01-01)</li>
-<li><a href="blog/2025/12/homebrewinstall/">Homebrew/install</a> (2025-12-31)</li>
-</ul>
+<style>
+.post-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
+.post-card { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; background: var(--md-default-bg-color); }
+.post-card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.post-card a { text-decoration: none; color: inherit; display: block; }
+.post-card-img { width: 100%; height: 180px; object-fit: cover; background: var(--md-default-fg-color--lightest); }
+.post-card-body { padding: 1rem; }
+.post-card-title { margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; color: var(--md-default-fg-color); }
+.post-card-date { font-size: 0.85rem; color: var(--md-default-fg-color--light); }
+</style>
+<div class="post-cards">
+<div class="post-card">
+<a href="blog/posts/2026-01-15-php-new.md">
+<img class="post-card-img" src="images/php_small.jpg" alt="php.new">
+<div class="post-card-body">
+<h3 class="post-card-title">php.new</h3>
+<span class="post-card-date">2026-01-15</span>
+</div>
+</a>
+</div>
+<div class="post-card">
+<a href="blog/posts/2026-01-08-basher.md">
+<img class="post-card-img" src="images/basher_small.jpg" alt="basherpm/basher">
+<div class="post-card-body">
+<h3 class="post-card-title">basherpm/basher</h3>
+<span class="post-card-date">2026-01-08</span>
+</div>
+</a>
+</div>
+<div class="post-card">
+<a href="blog/posts/2026-01-01-homebrew.md">
+<img class="post-card-img" src="images/homebrew_small.jpg" alt="Homebrew/install">
+<div class="post-card-body">
+<h3 class="post-card-title">Homebrew/install</h3>
+<span class="post-card-date">2026-01-01</span>
+</div>
+</a>
+</div>
+</div>
 
 
 

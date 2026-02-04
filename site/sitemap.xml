@@ -1,107 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://curlpipebash.com/</loc>
+         <loc>https://pforret.github.io/curlpipebash/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/about/</loc>
+         <loc>https://pforret.github.io/curlpipebash/about/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/best-practices/</loc>
+         <loc>https://pforret.github.io/curlpipebash/best-practices/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/best-practices/invocation/</loc>
+         <loc>https://pforret.github.io/curlpipebash/best-practices/invocation/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2025/12/homebrewinstall/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/2026/01/homebrew/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/basher/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/2026/01/basher/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/frankenphp/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/2026/01/php/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/docker/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/archive/2026/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/phpnew/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/category/script/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/laravel/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/category/phpnew/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/nvm/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/category/github/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/google-cloud-sdk/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/category/package-manager/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/claude-code/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/2026/02/openclawai/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/archive/2026/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/archive/2025/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/script/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/openclawai/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/claudeai/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/sdkcloudgooglecom/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/rawgithubusercontentcom/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/laravelbuild/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/phpnew/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/getdockercom/</loc>
-         <lastmod>2026-02-04</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/frankenphpdev/</loc>
+         <loc>https://pforret.github.io/curlpipebash/blog/category/brewsh/</loc>
          <lastmod>2026-02-04</lastmod>
     </url>
 </urlset>
