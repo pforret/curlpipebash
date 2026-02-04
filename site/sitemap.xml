@@ -2,82 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://curlpipebash.com/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/about/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/claudeaiinstallsh/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <loc>https://curlpipebash.com/blog/2026/01/bashermasterinstallsh/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2026/01/frankenphpdevinstallsh/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2026/01/getdockercom/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/2026/01/laravelbuildexample-app/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2026/01/phpnewinstallmac/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
-         <loc>https://curlpipebash.com/blog/2026/01/rawgithubusercontentcombasherpmbashermasterinstallsh/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <loc>https://curlpipebash.com/blog/2026/01/claudeaiinstallsh/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/2026/01/laravelbuildexample-app/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/2026/01/script-openclawai/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/2026/01/sdkcloudgooglecom/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/archive/2026/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/category/analysis/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/script/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/claudeai/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/frankenphpdev/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/getdockercom/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/laravelbuild/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://curlpipebash.com/blog/category/phpnew/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/rawgithubusercontentcom/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
     </url>
     <url>
          <loc>https://curlpipebash.com/blog/category/sdkcloudgooglecom/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/category/phpnew/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/category/getdockercom/</loc>
+         <lastmod>2026-02-04</lastmod>
+    </url>
+    <url>
+         <loc>https://curlpipebash.com/blog/category/frankenphpdev/</loc>
+         <lastmod>2026-02-04</lastmod>
     </url>
 </urlset>

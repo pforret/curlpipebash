@@ -572,6 +572,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../claudeai/" class="md-nav__link">
         
   
@@ -816,12 +839,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="rawgithubusercontentcombasherpmbashermasterinstallsh"><a class="toclink" href="../../2026/01/rawgithubusercontentcombasherpmbashermasterinstallsh/">raw.githubusercontent.com/basherpm/basher/master/install.sh</a></h2>
-<p>The basher installer is a minimal 61-line bash script that installs <a href="https://github.com/basherpm/basher">basher</a>, a package manager for shell scripts, via <code>curl -sL https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</code>. It git-clones the basher repository into <code>~/.basher</code> and appends initialization lines to the user's shell profile. Zero boilerplate — no colors, no banners, no spinners. Every line appended to the shell profile is tagged with the marker <code>##basher5ea843</code>, making it trivial to grep and remove them on uninstall. The script supports bash, zsh, sh, and fish, with fish getting its own 5-line initialization block.</p>
+    <h2 id="rawgithubusercontentcomnvm-shnvmv0401installsh"><a class="toclink" href="../../2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</a></h2>
+<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/01/rawgithubusercontentcombasherpmbashermasterinstallsh/">
+        <a href="../../2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">
           Continue reading
         </a>
       </nav>
@@ -835,7 +858,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">Jan 30, 2026</time></li>
+          <time datetime="2026-01-01 00:00:00+00:00">Jan 1, 2026</time></li>
         
           <li class="md-meta__item">
             in
@@ -856,12 +879,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="rawgithubusercontentcomnvm-shnvmv0401installsh"><a class="toclink" href="../../2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</a></h2>
-<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
+    <h2 id="bashermasterinstallsh"><a class="toclink" href="../../2026/01/bashermasterinstallsh/">basher/master/install.sh</a></h2>
+<p>The basher installer is a minimal 61-line bash script that installs <a href="https://github.com/basherpm/basher">basher</a>, a package manager for shell scripts, via <code>curl -sL https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</code>. It git-clones the basher repository into <code>~/.basher</code> and appends initialization lines to the user's shell profile. Zero boilerplate — no colors, no banners, no spinners. Every line appended to the shell profile is tagged with the marker <code>##basher5ea843</code>, making it trivial to grep and remove them on uninstall. The script supports bash, zsh, sh, and fish, with fish getting its own 5-line initialization block.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">
+        <a href="../../2026/01/bashermasterinstallsh/">
           Continue reading
         </a>
       </nav>

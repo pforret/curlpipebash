@@ -359,84 +359,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Recent posts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#claudeaiinstallsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      claude.ai/install.sh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getdockercom" class="md-nav__link">
-    <span class="md-ellipsis">
-      get.docker.com
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rawgithubusercontentcombasherpmbashermasterinstallsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      raw.githubusercontent.com/basherpm/basher/master/install.sh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phpnewinstallmac" class="md-nav__link">
-    <span class="md-ellipsis">
-      php.new/install/mac
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#laravelbuildexample-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      laravel.build/example-app
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rawgithubusercontentcomnvm-shnvmv0401installsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#frankenphpdevinstallsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      frankenphp.dev/install.sh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sdkcloudgooglecom" class="md-nav__link">
-    <span class="md-ellipsis">
-      sdk.cloud.google.com
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -690,6 +612,29 @@
   
   
     <li class="md-nav__item">
+      <a href="blog/category/analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="blog/category/claudeai/" class="md-nav__link">
         
   
@@ -897,30 +842,17 @@
 
 <h1 id="curl-bash">curl | bash<a class="headerlink" href="#curl-bash" title="Permanent link">&para;</a></h1>
 <h2 id="recent-posts">Recent posts<a class="headerlink" href="#recent-posts" title="Permanent link">&para;</a></h2>
-<h3 id="claudeaiinstallsh"><a href="blog/2026/01/claudeaiinstallsh/">claude.ai/install.sh</a><a class="headerlink" href="#claudeaiinstallsh" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The Claude Code installer is a compact 149-line bootstrap script invoked via <code>curl -fsSL https://claude.ai/install.sh | bash</code>. It downloads a platform-specific <code>claude</code> binary from a GCS bucket, verifies its SHA-256 checksum against a version manifest, then delegates the real setup to <code>claude install</code> — which handles the launcher binary and shell integration — and deletes the downloaded file afterward. The script is a two-stage bootstrapper: it does just enough to securely fetch a verified binary and hands off all persistent installation to that binary. It includes a pure-bash JSON parser as a fallback for extracting checksums when <code>jq</code> is not available, and detects musl libc on Linux to select the correct binary variant.</p>
-<h3 id="getdockercom"><a href="blog/2026/01/getdockercom/">get.docker.com</a><a class="headerlink" href="#getdockercom" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The Docker convenience install script at <code>get.docker.com</code> is a substantial 764-line shell script that configures Docker's official package repositories and installs Docker Engine, CLI, containerd, Compose, Buildx, rootless extras, and (as of v28.2) the Docker Model plugin on Linux systems via <code>curl -fsSL https://get.docker.com | bash</code>. It supports Debian/Ubuntu/Raspbian (apt), CentOS/Fedora/RHEL (dnf/yum), handles architecture detection, version pinning, channel selection (stable/test), and China mirror support (Aliyun, Azure). The entire script body is wrapped in a <code>do_install()</code> function as protection against partial downloads during pipe execution — a classic defensive pattern. Roughly 150 lines are comments, including a 97-line header that doubles as thorough usage documentation.</p>
-<h3 id="rawgithubusercontentcombasherpmbashermasterinstallsh"><a href="blog/2026/01/rawgithubusercontentcombasherpmbashermasterinstallsh/">raw.githubusercontent.com/basherpm/basher/master/install.sh</a><a class="headerlink" href="#rawgithubusercontentcombasherpmbashermasterinstallsh" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The basher installer is a minimal 61-line bash script that installs <a href="https://github.com/basherpm/basher">basher</a>, a package manager for shell scripts, via <code>curl -sL https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</code>. It git-clones the basher repository into <code>~/.basher</code> and appends initialization lines to the user's shell profile. Zero boilerplate — no colors, no banners, no spinners. Every line appended to the shell profile is tagged with the marker <code>##basher5ea843</code>, making it trivial to grep and remove them on uninstall. The script supports bash, zsh, sh, and fish, with fish getting its own 5-line initialization block.</p>
-<h3 id="phpnewinstallmac"><a href="blog/2026/01/phpnewinstallmac/">php.new/install/mac</a><a class="headerlink" href="#phpnewinstallmac" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The <code>php.new</code> macOS installer is a compact 212-line script that sets up a ready-to-go PHP development environment via <code>curl -sL https://php.new/install/mac | bash</code>. It downloads pre-built binaries for PHP 8.5, Composer, and the Laravel installer from <code>download.herdphp.com</code> — the infrastructure behind Laravel Herd — and drops them into <code>~/.config/herd-lite/bin/</code>. It also fetches the Mozilla CA certificate bundle from <code>curl.se</code>, creates a minimal <code>php.ini</code>, wires <code>PATH</code> and <code>PHP_INI_SCAN_DIR</code> into your shell profile, and generates its own uninstall script. The whole thing is essentially "Herd Lite": a standalone subset of Laravel Herd that skips the GUI and gives you three executables and a config directory.</p>
-<h3 id="laravelbuildexample-app"><a href="blog/2026/01/laravelbuildexample-app/">laravel.build/example-app</a><a class="headerlink" href="#laravelbuildexample-app" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The <code>laravel.build</code> installer is a compact 52-line script generated server-side by Laravel's build service, invoked via <code>curl -sL https://laravel.build/example-app | bash</code>. The URL path (<code>example-app</code>) determines the project name, and query parameters can customize which services are included. The script requires Docker to be running, pulls the <code>laravelsail/php84-composer:latest</code> image, runs <code>laravel new</code> and <code>sail:install</code> inside a container, then uses Laravel Sail to pull and build Docker images for mysql, redis, meilisearch, mailpit, and selenium. No software is installed on the host beyond the project directory — everything runs in Docker. Notably, the script has no shebang line and supports <code>doas</code> as a sudo alternative alongside the usual <code>sudo</code>.</p>
-<h3 id="rawgithubusercontentcomnvm-shnvmv0401installsh"><a href="blog/2026/01/rawgithubusercontentcomnvm-shnvmv0401installsh/">raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</a><a class="headerlink" href="#rawgithubusercontentcomnvm-shnvmv0401installsh" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The nvm (Node Version Manager) installer is a 495-line shell script invoked via <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</code>. It installs nvm by either cloning the <code>nvm-sh/nvm</code> Git repository (preferred) or downloading three individual files (<code>nvm.sh</code>, <code>nvm-exec</code>, <code>bash_completion</code>) as a fallback when git isn't available — the script method runs all three downloads in parallel using background jobs. The entire script body is wrapped in <code>{ ... }</code> braces as partial-download protection, and it enforces execution under bash, rejecting zsh outright. After installation it auto-detects the user's shell profile, appends the <code>NVM_DIR</code> export and sourcing lines, and optionally installs a Node.js version if <code>$NODE_VERSION</code> is set.</p>
-<h3 id="frankenphpdevinstallsh"><a href="blog/2026/01/frankenphpdevinstallsh/">frankenphp.dev/install.sh</a><a class="headerlink" href="#frankenphpdevinstallsh" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The FrankenPHP installer is a 154-line POSIX shell script that installs the FrankenPHP application server — a modern PHP app server built on Caddy — via <code>curl -sL https://frankenphp.dev/install.sh | bash</code>. It takes three different installation paths depending on what it finds: on Linux with dnf, it adds an RPM repository from <code>rpm.henderkes.com</code> and installs a native package with systemd integration; on Linux with apt, it does the equivalent via a DEB repository at <code>deb.henderkes.com</code>; and on all other systems (macOS, or Linux without apt/dnf), it downloads a static binary from GitHub releases directly into the current directory. The script uses <code>tput</code> for terminal formatting instead of raw ANSI codes, and on Linux it applies <code>setcap cap_net_bind_service</code> to let the binary bind ports 80/443 without root.</p>
-<h3 id="sdkcloudgooglecom"><a href="blog/2026/01/sdkcloudgooglecom/">sdk.cloud.google.com</a><a class="headerlink" href="#sdkcloudgooglecom" title="Permanent link">&para;</a></h3>
-<p><em>Jan 30, 2026</em></p>
-<p>The Google Cloud SDK installer uses a two-stage bootstrap: a 17-line stub at <code>sdk.cloud.google.com</code> (invoked via <code>curl -sL https://sdk.cloud.google.com | bash</code>) downloads and executes the real 218-line installer from <code>dl.google.com</code>, which in turn downloads a <code>google-cloud-sdk.tar.gz</code> tarball and runs the bundled <code>install.sh</code> from inside it — three layers deep. The stage 2 script is interactive: it prompts for an installation directory and handles TTY redirection so that prompts work even when the script is piped through bash. It supports both <code>curl</code> and <code>wget</code> for downloads, accepts <code>--disable-prompts</code> and <code>--install-dir</code> flags, and can be configured entirely through environment variables (<code>CLOUDSDK_CORE_DISABLE_PROMPTS</code>, <code>CLOUDSDK_INSTALL_DIR</code>).</p>
+<ul>
+<li><a href="blog/2026/01/openclaw-ai/">Script: openclaw.ai</a> (2026-01-31)</li>
+<li><a href="blog/2026/01/claude-ai/">claude.ai/install.sh</a> (2026-01-30)</li>
+<li><a href="blog/2026/01/laravel-build/">laravel.build/example-app</a> (2026-01-30)</li>
+<li><a href="blog/2026/01/raw-githubusercontent-com-nvm-sh/">raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh</a> (2026-01-30)</li>
+<li><a href="blog/2026/01/sdk-cloud-google-com/">sdk.cloud.google.com</a> (2026-01-30)</li>
+<li><a href="blog/2026/01/php-new/">php.new/install/mac</a> (2026-01-04)</li>
+<li><a href="blog/2026/01/get-docker-com/">get.docker.com</a> (2026-01-03)</li>
+<li><a href="blog/2026/01/frankenphp-dev/">frankenphp.dev/install.sh</a> (2026-01-02)</li>
+<li><a href="blog/2026/01/basherpm/">basher/master/install.sh</a> (2026-01-01)</li>
+</ul>
 
 
 
