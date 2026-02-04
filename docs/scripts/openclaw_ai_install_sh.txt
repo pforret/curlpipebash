@@ -1388,7 +1388,16 @@ EOF
             claw="$(resolve_openclaw_bin || true)"
         fi
         if [[ -n "$claw" ]] && is_gateway_daemon_loaded "$claw"; then
-            echo -e "${INFO}i${NC} Gateway daemon detected; restart with: ${INFO}openclaw daemon restart${NC}"
+            if [[ "$DRY_RUN" == "1" ]]; then
+                echo -e "${INFO}i${NC} Gateway daemon detected; would restart (${INFO}openclaw daemon restart${NC})."
+            else
+                echo -e "${INFO}i${NC} Gateway daemon detected; restarting..."
+                if OPENCLAW_UPDATE_IN_PROGRESS=1 "$claw" daemon restart >/dev/null 2>&1; then
+                    echo -e "${SUCCESS}✓${NC} Gateway restarted."
+                else
+                    echo -e "${WARN}→${NC} Gateway restart failed; try: ${INFO}openclaw daemon restart${NC}"
+                fi
+            fi
         fi
     fi
 
