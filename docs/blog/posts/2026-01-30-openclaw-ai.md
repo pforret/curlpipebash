@@ -1,5 +1,5 @@
 ---
-title: "Script: openclaw.ai"
+title: "openclaw.ai/install.sh"
 slug: openclaw
 categories:
   - openclaw.ai
