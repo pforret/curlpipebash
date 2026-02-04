@@ -1035,17 +1035,17 @@
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sL<span class="w"> </span>https://example.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
 </code></pre></div>
 <p>The script streams directly from curl into bash. Simple and common, but vulnerable to partial downloads — if the connection drops mid-script, bash may execute a truncated script with unpredictable results.</p>
-<p><strong>Used by:</strong> <a href="../../archive/2026-01-01-basherpm.md">basher</a>, <a href="../../archive/2026-01-02-frankenphp-dev.md">FrankenPHP</a>, <a href="../../archive/2026-01-10-laravel-build.md">Laravel</a>, <a href="../../archive/done/2026-01-04-php-new.md">php.new</a>, <a href="../../archive/2026-01-13-sdk-cloud-google-com.md">Google Cloud SDK</a></p>
+<p><strong>Used by:</strong> basher, FrankenPHP, Laravel, php.new, Google Cloud SDK</p>
 <h3 id="2-output-to-stdout-explicit">2. Output-to-stdout explicit<a class="headerlink" href="#2-output-to-stdout-explicit" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o-<span class="w"> </span>https://example.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
 </code></pre></div>
 <p>Functionally identical to <code>-sL</code>, but <code>-o-</code> explicitly writes to stdout instead of relying on curl's default behavior. Some consider this more explicit and readable.</p>
-<p><strong>Used by:</strong> <a href="../../archive/2026-01-12-nvm.md">nvm</a></p>
+<p><strong>Used by:</strong> nvm</p>
 <h3 id="3-command-substitution">3. Command substitution<a class="headerlink" href="#3-command-substitution" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://example.com/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>Downloads the entire script first, then passes it to bash. This <strong>eliminates the partial download problem</strong> — if curl fails or the connection drops, bash receives nothing (or an error message) instead of a truncated script.</p>
-<p><strong>Used by:</strong> <a href="../../archive/done/2025-12-31-homebrew.md">Homebrew</a></p>
+<p><strong>Used by:</strong> Homebrew</p>
 <h2 id="curl-flag-combinations">curl flag combinations<a class="headerlink" href="#curl-flag-combinations" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1139,14 +1139,14 @@ do_install<span class="o">()</span><span class="w"> </span><span class="o">{</sp
 <span class="o">}</span>
 do_install
 </code></pre></div>
-<p><strong>Used by:</strong> <a href="../../archive/2026-01-03-get-docker-com.md">Docker</a> — If the download is truncated before the final <code>do_install</code> call, nothing executes.</p>
+<p><strong>Used by:</strong> Docker — If the download is truncated before the final <code>do_install</code> call, nothing executes.</p>
 <h3 id="brace-wrapper">Brace wrapper<a class="headerlink" href="#brace-wrapper" title="Permanent link">&para;</a></h3>
 <p>Wrap the script in braces:</p>
 <div class="highlight"><pre><span></span><code><span class="o">{</span>
 <span class="w">    </span><span class="c1"># ... entire script here ...</span>
 <span class="o">}</span>
 </code></pre></div>
-<p><strong>Used by:</strong> <a href="../../archive/2026-01-12-nvm.md">nvm</a> — bash won't execute the block until it sees the closing brace.</p>
+<p><strong>Used by:</strong> nvm — bash won't execute the block until it sees the closing brace.</p>
 <h3 id="multi-stage-bootstrap">Multi-stage bootstrap<a class="headerlink" href="#multi-stage-bootstrap" title="Permanent link">&para;</a></h3>
 <p>A small stub script downloads and executes the real installer:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -1155,7 +1155,7 @@ curl<span class="w"> </span>-sL<span class="w"> </span>https://example.com/real-
 bash<span class="w"> </span>/tmp/installer.sh
 rm<span class="w"> </span>/tmp/installer.sh
 </code></pre></div>
-<p><strong>Used by:</strong> <a href="../../archive/2026-01-13-sdk-cloud-google-com.md">Google Cloud SDK</a>, <a href="../../archive/2026-01-28-claude-ai.md">Claude Code</a> — The stub is small enough to survive partial downloads; the real installer is downloaded as a file and verified before execution.</p>
+<p><strong>Used by:</strong> Google Cloud SDK, Claude Code — The stub is small enough to survive partial downloads; the real installer is downloaded as a file and verified before execution.</p>
 <h2 id="server-side-pipe-detection">Server-side pipe detection<a class="headerlink" href="#server-side-pipe-detection" title="Permanent link">&para;</a></h2>
 <p>A malicious server can detect whether you're piping to bash or downloading to a file, and serve different content accordingly. This is a real attack vector.</p>
 <h3 id="how-detection-works">How detection works<a class="headerlink" href="#how-detection-works" title="Permanent link">&para;</a></h3>
@@ -1239,7 +1239,7 @@ rm<span class="w"> </span>install.sh
 <h2 id="interactive-scripts">Interactive scripts<a class="headerlink" href="#interactive-scripts" title="Permanent link">&para;</a></h2>
 <p>Some installers need user input during execution. When piped through bash, stdin is consumed by the script content. Solutions:</p>
 <ul>
-<li><strong>TTY redirection:</strong> The script redirects stdin from <code>/dev/tty</code> to restore interactivity. Used by <a href="../../archive/2026-01-13-sdk-cloud-google-com.md">Google Cloud SDK</a>.</li>
+<li><strong>TTY redirection:</strong> The script redirects stdin from <code>/dev/tty</code> to restore interactivity. Used by Google Cloud SDK.</li>
 <li><strong>Environment variables:</strong> Accept configuration via env vars instead of prompts. Example: <code>CLOUDSDK_CORE_DISABLE_PROMPTS=1</code></li>
 <li><strong>Command-line flags:</strong> Pass <code>--non-interactive</code> or similar flags.</li>
 </ul>

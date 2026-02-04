@@ -12,7 +12,7 @@ curl -sL https://example.com/install.sh | bash
 
 The script streams directly from curl into bash. Simple and common, but vulnerable to partial downloads — if the connection drops mid-script, bash may execute a truncated script with unpredictable results.
 
-**Used by:** [basher](../../archive/2026-01-01-basherpm.md), [FrankenPHP](../../archive/2026-01-02-frankenphp-dev.md), [Laravel](../../archive/2026-01-10-laravel-build.md), [php.new](../../archive/done/2026-01-04-php-new.md), [Google Cloud SDK](../../archive/2026-01-13-sdk-cloud-google-com.md)
+**Used by:** basher, FrankenPHP, Laravel, php.new, Google Cloud SDK
 
 ### 2. Output-to-stdout explicit
 
@@ -22,7 +22,7 @@ curl -o- https://example.com/install.sh | bash
 
 Functionally identical to `-sL`, but `-o-` explicitly writes to stdout instead of relying on curl's default behavior. Some consider this more explicit and readable.
 
-**Used by:** [nvm](../../archive/2026-01-12-nvm.md)
+**Used by:** nvm
 
 ### 3. Command substitution
 
@@ -32,7 +32,7 @@ Functionally identical to `-sL`, but `-o-` explicitly writes to stdout instead o
 
 Downloads the entire script first, then passes it to bash. This **eliminates the partial download problem** — if curl fails or the connection drops, bash receives nothing (or an error message) instead of a truncated script.
 
-**Used by:** [Homebrew](../../archive/done/2025-12-31-homebrew.md)
+**Used by:** Homebrew
 
 ## curl flag combinations
 
@@ -80,7 +80,7 @@ do_install() {
 do_install
 ```
 
-**Used by:** [Docker](../../archive/2026-01-03-get-docker-com.md) — If the download is truncated before the final `do_install` call, nothing executes.
+**Used by:** Docker — If the download is truncated before the final `do_install` call, nothing executes.
 
 ### Brace wrapper
 
@@ -92,7 +92,7 @@ Wrap the script in braces:
 }
 ```
 
-**Used by:** [nvm](../../archive/2026-01-12-nvm.md) — bash won't execute the block until it sees the closing brace.
+**Used by:** nvm — bash won't execute the block until it sees the closing brace.
 
 ### Multi-stage bootstrap
 
@@ -106,7 +106,7 @@ bash /tmp/installer.sh
 rm /tmp/installer.sh
 ```
 
-**Used by:** [Google Cloud SDK](../../archive/2026-01-13-sdk-cloud-google-com.md), [Claude Code](../../archive/2026-01-28-claude-ai.md) — The stub is small enough to survive partial downloads; the real installer is downloaded as a file and verified before execution.
+**Used by:** Google Cloud SDK, Claude Code — The stub is small enough to survive partial downloads; the real installer is downloaded as a file and verified before execution.
 
 ## Server-side pipe detection
 
@@ -181,6 +181,6 @@ See [The Dangers of curl|bash](https://lukespademan.com/blog/the-dangers-of-curl
 
 Some installers need user input during execution. When piped through bash, stdin is consumed by the script content. Solutions:
 
-- **TTY redirection:** The script redirects stdin from `/dev/tty` to restore interactivity. Used by [Google Cloud SDK](../../archive/2026-01-13-sdk-cloud-google-com.md).
+- **TTY redirection:** The script redirects stdin from `/dev/tty` to restore interactivity. Used by Google Cloud SDK.
 - **Environment variables:** Accept configuration via env vars instead of prompts. Example: `CLOUDSDK_CORE_DISABLE_PROMPTS=1`
 - **Command-line flags:** Pass `--non-interactive` or similar flags.
