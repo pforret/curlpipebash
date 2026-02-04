@@ -900,16 +900,18 @@
 
 
 <h1 id="curl-bash">curl | bash<a class="headerlink" href="#curl-bash" title="Permanent link">&para;</a></h1>
+<p>One-liner installation scripts like <code>curl -fsSL https://example.com/install.sh | bash</code> are everywhere. Docker, Homebrew, nvm, Laravel — they all use this pattern. But what exactly are you running? This site analyzes popular curl|bash scripts: what they install, what they modify, and how to undo them.</p>
 <h2 id="recent-posts">Recent posts<a class="headerlink" href="#recent-posts" title="Permanent link">&para;</a></h2>
 <style>
-.post-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
+.post-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
 .post-card { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; background: var(--md-default-bg-color); }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .post-card a { text-decoration: none; color: inherit; display: block; }
-.post-card-img { width: 100%; height: 180px; object-fit: cover; background: var(--md-default-fg-color--lightest); }
+.post-card-img { width: 100%; height: 160px; object-fit: cover; background: var(--md-default-fg-color--lightest); }
 .post-card-body { padding: 1rem; }
-.post-card-title { margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; color: var(--md-default-fg-color); }
-.post-card-date { font-size: 0.85rem; color: var(--md-default-fg-color--light); }
+.post-card-title { margin: 0 0 0.25rem 0; font-size: 1.1rem; font-weight: 600; color: var(--md-default-fg-color); }
+.post-card-excerpt { margin: 0.5rem 0; font-size: 0.9rem; color: var(--md-default-fg-color--light); line-height: 1.4; }
+.post-card-date { font-size: 0.75rem; color: var(--md-default-fg-color--lighter); }
 </style>
 <div class="post-cards">
 <div class="post-card">
@@ -917,6 +919,7 @@
 <img class="post-card-img" src="images/openclaw-ai_small.jpg" alt="OpenClaw">
 <div class="post-card-body">
 <h3 class="post-card-title">OpenClaw</h3>
+<p class="post-card-excerpt">Ever wished you had a lobster-themed CLI assistant that could automate your terminal chores? OpenClaw is exactly...</p>
 <span class="post-card-date">2026-01-29</span>
 </div>
 </a>
@@ -926,6 +929,7 @@
 <img class="post-card-img" src="images/get-docker-com_small.jpg" alt="Docker">
 <div class="post-card-body">
 <h3 class="post-card-title">Docker</h3>
+<p class="post-card-excerpt">Want to containerize your life? Docker's one-liner install script is how millions of developers get their container...</p>
 <span class="post-card-date">2026-01-22</span>
 </div>
 </a>
@@ -935,6 +939,7 @@
 <img class="post-card-img" src="images/php_small.jpg" alt="php.new">
 <div class="post-card-body">
 <h3 class="post-card-title">php.new</h3>
+<p class="post-card-excerpt">Ever wanted to go from zero to PHP in under a minute? The `php.new` installer is Laravel's gift to developers who...</p>
 <span class="post-card-date">2026-01-15</span>
 </div>
 </a>
@@ -944,6 +949,7 @@
 <img class="post-card-img" src="images/basher_small.jpg" alt="basherpm/basher">
 <div class="post-card-body">
 <h3 class="post-card-title">basherpm/basher</h3>
+<p class="post-card-excerpt">Ever wished you could install bash scripts as easily as you install npm packages? That's exactly what basher does —...</p>
 <span class="post-card-date">2026-01-08</span>
 </div>
 </a>
@@ -953,6 +959,7 @@
 <img class="post-card-img" src="images/homebrew_small.jpg" alt="Homebrew/install">
 <div class="post-card-body">
 <h3 class="post-card-title">Homebrew/install</h3>
+<p class="post-card-excerpt">Ever wished installing software on your Mac (or Linux box) was as easy as `apt-get` on Debian? That's exactly what...</p>
 <span class="post-card-date">2026-01-01</span>
 </div>
 </a>
