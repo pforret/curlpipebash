@@ -1,5 +1,6 @@
 ---
 title: "raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh"
+slug: rawgithubusercontentcomnvmshnvmv0401installsh
 categories:
   - script
   - raw.githubusercontent.com

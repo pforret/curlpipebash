@@ -1,5 +1,6 @@
 ---
 title: "laravel.build/example-app"
+slug: laravelbuildexample-app
 categories:
   - script
   - laravel.build

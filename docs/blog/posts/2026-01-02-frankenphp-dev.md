@@ -1,5 +1,6 @@
 ---
 title: "frankenphp.dev/install.sh"
+slug: frankenphpdevinstallsh
 categories:
   - script
   - frankenphp.dev

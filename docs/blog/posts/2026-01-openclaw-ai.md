@@ -1,5 +1,6 @@
 ---
 title: "Script: openclaw.ai"
+slug: script-openclawai
 categories:
   - Analysis
 date: 2026-01-31

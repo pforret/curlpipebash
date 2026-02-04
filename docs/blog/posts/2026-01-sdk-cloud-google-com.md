@@ -1,5 +1,6 @@
 ---
 title: "sdk.cloud.google.com"
+slug: sdkcloudgooglecom
 categories:
   - script
   - sdk.cloud.google.com

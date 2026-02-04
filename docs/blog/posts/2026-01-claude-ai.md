@@ -1,5 +1,6 @@
 ---
 title: "claude.ai/install.sh"
+slug: claudeaiinstallsh
 categories:
   - script
   - claude.ai
