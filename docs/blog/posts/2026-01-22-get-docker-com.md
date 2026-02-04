@@ -16,15 +16,15 @@ Want to containerize your life? Docker's one-liner install script is how million
 
 ## Script info
 
-| | |
-|---|---|
-| **URL** | `https://get.docker.com` |
-| **Invocation** | `curl -fsSL https://get.docker.com \| bash` |
-| **Total lines** | 764 |
-| **Comments** | 97 lines |
-| **Blank** | 35 lines |
-| **Boilerplate** | 95 lines (output formatting, deprecation warnings, help text) |
-| **Installation** | 537 lines (actual work) |
+|                  |                                                               |
+|------------------|---------------------------------------------------------------|
+| **URL**          | `https://get.docker.com`                                      |
+| **Invocation**   | `curl -fsSL https://get.docker.com \| bash`                   |
+| **Total lines**  | 764                                                           |
+| **Comments**     | 97 lines                                                      |
+| **Blank**        | 35 lines                                                      |
+| **Boilerplate**  | 95 lines (output formatting, deprecation warnings, help text) |
+| **Installation** | 537 lines (actual work)                                       |
 
 ## What does it change?
 
